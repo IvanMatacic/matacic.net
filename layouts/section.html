@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{- $n := len .RegularPages -}}
+<div class="wrap">
+  <div class="col col-760 list-page">
+    <header class="page-head">
+      <p class="eyebrow eyebrow-accent">{{ .Title }}</p>
+      <h1>All posts</h1>
+      <p class="lede">{{ .Description }} <span class="num">{{ $n }}</span> {{ if eq $n 1 }}post{{ else }}posts{{ end }}.</p>
+      {{ partial "topic-rail.html" (dict "current" "" "showAll" true "compact" true "label" "Filter by topic") }}
+    </header>
+    <div class="year-list">
+      {{- range .RegularPages.GroupByDate "2006" }}
+      <h2 class="year num">{{ .Key }}</h2>
+      <ul class="year-posts">
+        {{- range .Pages }}
+        <li>
+          <a class="list-row" href="{{ .RelPermalink }}">
+            <time class="list-date num" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+            <span class="list-main">
+              <span class="list-title">{{ .Title }}</span>
+              {{- with .Params.summary }}<span class="list-summary">{{ . }}</span>{{ end }}
+            </span>
+            {{- with .GetTerms "topics" }}{{ range first 1 . }}<span class="list-topic">{{ .LinkTitle }}</span>{{ end }}{{ end }}
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
+  </div>
+</div>
+{{ end }}

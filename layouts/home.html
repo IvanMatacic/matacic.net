@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="wrap home-stack">
+  <section class="hero col col-left col-720" aria-labelledby="hero-name">
+    <p class="eyebrow eyebrow-accent">{{ site.Params.role }}</p>
+    <h1 class="hero-title" id="hero-name">{{ site.Params.author }}</h1>
+    <p class="hero-bio">{{ site.Params.bio }}</p>
+    <p class="hero-meta">
+      {{- with .Params.tech }}<span>{{ . }}</span><span aria-hidden="true">·</span>{{ end -}}
+      <span>{{ site.Params.location }}</span><span aria-hidden="true">·</span><span class="num">since {{ site.Params.since }}</span>
+    </p>
+  </section>
+
+  {{- with site.Taxonomies.topics }}
+  <section class="topics-block" aria-labelledby="topics-heading">
+    <h2 class="eyebrow" id="topics-heading">Topics</h2>
+    {{ partial "topic-rail.html" (dict "current" "" "showAll" false "compact" false) }}
+  </section>
+  {{- end }}
+
+  <section class="col col-left col-760" aria-labelledby="latest-heading">
+    <header class="section-head">
+      <h2 class="eyebrow" id="latest-heading">Latest</h2>
+      <a class="more" href="{{ "/writing/" | relURL }}">All writing →</a>
+    </header>
+    {{- range first 5 (where site.RegularPages "Section" "writing") }}
+    {{ partial "post-card.html" . }}
+    {{- end }}
+  </section>
+
+  <section class="col col-left col-760" aria-labelledby="notes-heading">
+    <header class="section-head" style="margin-bottom:0">
+      <h2 class="eyebrow" id="notes-heading">Recent notes</h2>
+      <a class="more" href="{{ "/notes/" | relURL }}">All notes →</a>
+    </header>
+    <ul class="note-list">
+      {{- range first 4 (where site.RegularPages "Section" "notes") }}
+      {{ partial "note-row.html" . }}
+      {{- end }}
+    </ul>
+  </section>
+</div>
+{{ end }}

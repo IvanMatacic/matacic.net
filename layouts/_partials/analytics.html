@@ -1,0 +1,9 @@
+{{- /* Emits nothing unless configured, and never outside production (hugo server never tracks). */ -}}
+{{- if hugo.IsProduction -}}
+{{- with site.Params.cloudflareAnalyticsToken }}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" {{ printf `data-cf-beacon='{"token": "%s"}'` . | safeHTMLAttr }}></script>
+{{- end -}}
+{{- with site.Config.Services.GoogleAnalytics.ID }}
+{{ partial "google_analytics.html" $ }}
+{{- end -}}
+{{- end -}}

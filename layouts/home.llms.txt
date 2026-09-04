@@ -1,0 +1,18 @@
+# Ivan Matačić — matacic.net
+
+> {{ site.Params.description }}
+
+Systems administrator writing about virtualization, storage, backup and
+networking. Long-form articles under Writing, short TIL entries under Notes.
+
+## Writing
+{{ range where (where site.RegularPages "Section" "writing") "Draft" false -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Params.summary }}
+{{ end }}
+## Notes
+{{ range where (where site.RegularPages "Section" "notes") "Draft" false -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Params.summary }}
+{{ end }}
+## Pages
+- [About / CV]({{ "about/" | absURL }}): bio, experience and verified certifications
+- [Homelab]({{ "homelab/" | absURL }}): current hardware and what runs where

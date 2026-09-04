@@ -1,0 +1,63 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="col col-860 homelab-stack">
+    <header class="page-head">
+      <p class="eyebrow eyebrow-accent">{{ .Title }}</p>
+      <h1>{{ .Params.heading | default .Title }}</h1>
+      <div class="lede">{{ .Content }}</div>
+    </header>
+
+    {{- with .Params.hardware }}
+    <div class="hw-wrap">
+      <table class="hw-table">
+        <caption class="sr-only">Current hardware</caption>
+        <colgroup><col><col><col><col></colgroup>
+        <thead>
+          <tr><th scope="col">Host</th><th scope="col">Role</th><th scope="col">Specs</th><th scope="col">Notes</th></tr>
+        </thead>
+        <tbody>
+          {{- range . }}
+          <tr>
+            <td class="hw-host">{{ .host }}</td>
+            <td>{{ .role }}</td>
+            <td>{{ .specs }}</td>
+            <td class="hw-notes">{{ .notes }}</td>
+          </tr>
+          {{- end }}
+        </tbody>
+      </table>
+    </div>
+    {{- end }}
+
+    <div class="two-col">
+      <section class="side-block" aria-labelledby="runs-heading">
+        <h2 class="eyebrow" id="runs-heading">What runs where</h2>
+        <ul class="runs-list">
+          {{- range .Params.services }}
+          <li><span class="runs-host">{{ .host }}</span> — {{ .runs }}</li>
+          {{- end }}
+        </ul>
+      </section>
+      <section class="side-block" aria-labelledby="posts-heading">
+        <h2 class="eyebrow" id="posts-heading">Posts tagged Homelab</h2>
+        {{- $posts := slice }}
+        {{- with site.Taxonomies.topics }}{{ with index . "homelab" }}{{ $posts = .Pages }}{{ end }}{{ end }}
+        {{- with $posts }}
+        <ul class="mini-list">
+          {{- range . }}
+          <li>
+            <a class="mini-row" href="{{ .RelPermalink }}">
+              <span>{{ .Title }}</span>
+              <time class="meta num" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+            </a>
+          </li>
+          {{- end }}
+        </ul>
+        {{- else }}
+        <p class="lede">Nothing filed under Homelab yet.</p>
+        {{- end }}
+      </section>
+    </div>
+  </div>
+</div>
+{{ end }}

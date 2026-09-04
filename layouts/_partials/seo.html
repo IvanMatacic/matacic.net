@@ -1,0 +1,96 @@
+{{- /* Meta description, canonical, Open Graph, Twitter card and JSON-LD by page kind. */ -}}
+{{- $isPost := and .IsPage (or (eq .Section "writing") (eq .Section "notes")) -}}
+{{- $desc := .Description | default .Params.summary | default site.Params.description -}}
+{{- $img := site.Params.ogImage | absURL -}}
+{{- with .Params.image }}{{ $img = . | absURL }}{{ end -}}
+{{- /* Optional per-article card: title rendered over the base image with images.Text */ -}}
+{{- if and $isPost (eq .Section "writing") (not .Params.image) -}}
+  {{- with resources.Get "og-base.png" -}}
+    {{- $font := resources.Get "fonts/IBMPlexMono-Medium.ttf" -}}
+    {{- if $font -}}
+      {{- $opts := dict "font" $font "size" 52 "color" "#e8edf3" "x" 80 "y" 296 "linespacing" 14 -}}
+      {{- with .Filter (images.Text $.Title $opts) }}{{ $img = .Permalink }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- if and (eq .Layout "search") (not site.Params.features.search) }}
+<meta name="robots" content="noindex">
+{{- end }}
+<meta property="og:type" content="{{ if $isPost }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ $img }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{{- if $isPost }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $img }}">
+{{- /* ---- JSON-LD ---- */ -}}
+{{- $person := dict
+  "@type" "Person"
+  "name" site.Params.author
+  "url" site.BaseURL
+  "jobTitle" site.Params.role
+  "sameAs" (slice site.Params.linkedin site.Params.github site.Params.credly)
+-}}
+{{- $ld := dict -}}
+{{- if .IsHome -}}
+  {{- $ld = dict
+    "@context" "https://schema.org"
+    "@type" "WebSite"
+    "name" site.Title
+    "url" site.BaseURL
+    "description" site.Params.description
+    "inLanguage" "en"
+    "author" $person
+    "publisher" $person
+  -}}
+{{- else if eq .Layout "about" -}}
+  {{- $creds := slice -}}
+  {{- range hugo.Data.certifications.groups -}}
+    {{- $issuer := .issuer -}}
+    {{- range .items -}}
+      {{- $creds = $creds | append (dict
+        "@type" "EducationalOccupationalCredential"
+        "name" .name
+        "credentialCategory" "certification"
+        "recognizedBy" (dict "@type" "Organization" "name" $issuer)
+        "url" (printf "https://www.credly.com/badges/%s/public_url" .id)
+      ) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $ld = merge $person (dict
+    "@context" "https://schema.org"
+    "url" .Permalink
+    "address" (dict "@type" "PostalAddress" "addressLocality" "Zagreb" "addressCountry" "HR")
+    "hasCredential" $creds
+  ) -}}
+{{- else if $isPost -}}
+  {{- $ld = dict
+    "@context" "https://schema.org"
+    "@type" "BlogPosting"
+    "headline" .Title
+    "description" $desc
+    "url" .Permalink
+    "datePublished" (.Date.Format "2006-01-02")
+    "dateModified" (.Lastmod.Format "2006-01-02")
+    "inLanguage" "en"
+    "author" $person
+    "publisher" $person
+    "image" $img
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  -}}
+  {{- with .Params.tags }}{{ $ld = merge $ld (dict "keywords" (delimit . ", ")) }}{{ end -}}
+{{- end -}}
+{{- with $ld }}
+<script type="application/ld+json">{{ . | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{- end }}

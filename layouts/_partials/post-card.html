@@ -1,0 +1,10 @@
+<article class="post-card">
+  <p class="meta">
+    {{- with .GetTerms "topics" }}{{ range first 1 . }}<a class="meta-topic" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a><span aria-hidden="true">·</span>{{ end }}{{ end -}}
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time><span aria-hidden="true">·</span><span>{{ .ReadingTime }} min read</span>
+  </p>
+  <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  {{- with .Params.summary }}
+  <p class="post-summary">{{ . }}</p>
+  {{- end }}
+</article>

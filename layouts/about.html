@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="col col-820 about-stack">
+    <header class="page-head">
+      <p class="eyebrow eyebrow-accent">{{ .Title }}</p>
+      <h1>{{ site.Params.author }}</h1>
+      <div class="lede">{{ .Content }}</div>
+    </header>
+
+    <div class="two-col">
+      <section class="card" aria-labelledby="focus-heading">
+        <h2 class="eyebrow" id="focus-heading">Focus</h2>
+        <ul class="plain-list">
+          {{- range .Params.focus }}
+          <li>{{ . }}</li>
+          {{- end }}
+        </ul>
+      </section>
+      <section class="card" aria-labelledby="experience-heading">
+        <h2 class="eyebrow" id="experience-heading">Experience</h2>
+        <ul class="plain-list exp">
+          {{- range .Params.experience }}
+          <li>
+            <span class="exp-role">{{ .role }}</span>
+            <span class="meta num">{{ .org }} · {{ .period }}</span>
+          </li>
+          {{- end }}
+        </ul>
+      </section>
+    </div>
+
+    {{ partial "certifications.html" . }}
+
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="contact-text">
+        <h2 class="eyebrow eyebrow-accent" id="contact-heading">Get in touch</h2>
+        <p>Email is the fastest way to reach me. No forms, no trackers.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+        <a class="btn" href="{{ site.Params.linkedin }}" rel="me">LinkedIn</a>
+      </div>
+    </section>
+  </div>
+</div>
+{{ end }}

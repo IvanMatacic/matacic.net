@@ -1,0 +1,43 @@
+{{ define "main" }}
+{{- $writing := where .Pages "Section" "writing" -}}
+{{- $notes := where .Pages "Section" "notes" -}}
+<div class="wrap">
+  <div class="col col-760 list-page">
+    <header class="page-head">
+      <a class="back" href="{{ .Parent.RelPermalink }}">← All {{ .Data.Plural }}</a>
+      <h1 class="term-title">{{ if eq .Data.Plural "tags" }}{{ .Title | lower }}{{ else }}{{ .Title }}{{ end }}
+        <span class="term-count num">
+          {{- len $writing }} {{ if eq (len $writing) 1 }}post{{ else }}posts{{ end }}
+          {{- if $notes }} · {{ len $notes }} {{ if eq (len $notes) 1 }}note{{ else }}notes{{ end }}{{ end -}}
+        </span>
+      </h1>
+      {{- with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+      {{- if eq .Data.Plural "topics" }}
+      {{ partial "topic-rail.html" (dict "current" .RelPermalink "showAll" true "compact" true "label" "Other topics") }}
+      {{- end }}
+    </header>
+    {{- with $writing }}
+    <section class="term-section" aria-labelledby="term-writing">
+      <h2 class="eyebrow" id="term-writing">Writing</h2>
+      {{- range . }}
+      <a class="term-row" href="{{ .RelPermalink }}">
+        <time class="term-date num" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        <span class="term-name">{{ .Title }}</span>
+      </a>
+      {{- end }}
+    </section>
+    {{- end }}
+    {{- with $notes }}
+    <section class="term-section" aria-labelledby="term-notes">
+      <h2 class="eyebrow" id="term-notes">Notes</h2>
+      {{- range . }}
+      <a class="term-row is-note" href="{{ .RelPermalink }}">
+        <time class="term-date num" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        <span class="term-name">{{ .Title }}</span>
+      </a>
+      {{- end }}
+    </section>
+    {{- end }}
+  </div>
+</div>
+{{ end }}

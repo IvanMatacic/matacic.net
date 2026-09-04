@@ -1,0 +1,34 @@
+{{- $groups := hugo.Data.certifications.groups -}}
+{{- $total := 0 -}}
+{{- range $groups }}{{ $total = add $total (len .items) }}{{ end -}}
+<section class="certs" id="certifications" aria-labelledby="certs-heading">
+  <header class="certs-head">
+    <h2 class="eyebrow" id="certs-heading">Certifications</h2>
+    <p class="certs-sub"><span class="num">{{ $total }}</span> verified badges across {{ len $groups }} issuers — every entry links to its Credly verification.</p>
+  </header>
+  {{- range $groups }}
+  {{- $color := .color }}{{ $mono := .mono }}
+  <div class="cert-group">
+    <h3 class="cert-issuer"><span>{{ .issuer }}</span><span class="pill num">{{ len .items }}</span><span class="hairline" aria-hidden="true"></span></h3>
+    <ul class="cert-list">
+      {{- range .items }}
+      {{- $item := . }}
+      <li>
+        <a class="cert" href="https://www.credly.com/badges/{{ .id }}/public_url" target="_blank" rel="noopener">
+          {{- with .image }}
+          <img class="cert-badge" src="{{ . | relURL }}" alt="{{ $item.name }} badge" width="44" height="44" loading="lazy">
+          {{- else }}
+          <span class="cert-disc" style="{{ printf "color:%s" $color | safeCSS }}" aria-hidden="true">{{ $mono }}</span>
+          {{- end }}
+          <span class="cert-main">
+            <span class="cert-name">{{ .name }}</span>
+            <span class="cert-year meta num">{{ .year }}</span>
+          </span>
+          <span class="cert-verify">Verify ↗<span class="sr-only"> — {{ .name }} on Credly (opens in a new tab)</span></span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+</section>

@@ -1,0 +1,13 @@
+{{- /* Topic chips with counts. Context: dict "current" (term permalink or "") "showAll" (bool) "compact" (bool) "label" (string) */ -}}
+{{- with site.Taxonomies.topics }}
+<nav class="topics{{ if $.compact }} topics-compact{{ end }}" aria-label="{{ $.label | default "Topics" }}">
+  {{- if $.showAll }}
+  <a class="chip{{ if not $.current }} is-active{{ end }}" href="{{ "/writing/" | relURL }}">All</a>
+  {{- end }}
+  {{- range .ByCount }}
+  {{- with .Page }}
+  <a class="chip{{ if eq .RelPermalink $.current }} is-active{{ end }}" href="{{ .RelPermalink }}"{{ if eq .RelPermalink $.current }} aria-current="page"{{ end }}>{{ .LinkTitle }} <span class="chip-count num">{{ len .Pages }}</span></a>
+  {{- end }}
+  {{- end }}
+</nav>
+{{- end }}

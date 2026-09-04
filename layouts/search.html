@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="col col-760 list-page search-page">
+    <header class="page-head">
+      <p class="eyebrow eyebrow-accent">Search</p>
+      <h1>{{ .Title }}</h1>
+      {{- if site.Params.features.search }}
+      <p class="lede">Every post and note, indexed at build time by Pagefind. Nothing leaves your browser.</p>
+      {{- else }}
+      <p class="lede">Search isn't enabled yet — the archives are still small enough to browse. Try one of these instead:</p>
+      {{- end }}
+    </header>
+    {{- if site.Params.features.search }}
+    <link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+    <div id="search" data-pagefind-ignore></div>
+    <script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
+    <script>window.addEventListener('DOMContentLoaded',function(){new PagefindUI({element:'#search',showSubResults:true});});</script>
+    {{- else }}
+    <ul class="link-list">
+      <li><a href="{{ "/topics/" | relURL }}">Browse topics</a></li>
+      <li><a href="{{ "/writing/" | relURL }}">All writing</a></li>
+      <li><a href="{{ "/notes/" | relURL }}">All notes</a></li>
+    </ul>
+    {{- end }}
+  </div>
+</div>
+{{ end }}

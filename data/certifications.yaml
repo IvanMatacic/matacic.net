@@ -1,0 +1,65 @@
+# data/certifications.yaml
+# One item = one badge. Adding a certification is a one-line edit under its issuer.
+# `id` is the Credly badge id: the item links to https://www.credly.com/badges/<id>/public_url
+# `image` (optional): path under static/, e.g. "badges/veeam-vmca.png" — see static/badges/README.md
+groups:
+  - issuer: "Amazon Web Services"
+    color: "#ff9900"
+    mono: "AWS"
+    items:
+      - name: "AWS Certified CloudOps Engineer – Associate"
+        year: 2025
+        id: "29cb7b3b-3f37-44f1-a701-65e5f642c1ff"
+  - issuer: "NetApp"
+    color: "#0a7fd6"
+    mono: "NA"
+    items:
+      - name: "Accredited Hybrid Cloud Associate"
+        year: 2025
+        id: "498a413f-310a-41d1-95a6-c9a872b6bc35"
+      - name: "Accredited Cloud Native Associate"
+        year: 2025
+        id: "95357583-f9e6-4700-b2ee-4702eda5cf00"
+  - issuer: "Fortinet"
+    color: "#e02a2a"
+    mono: "FN"
+    items:
+      - name: "Certified Associate Cybersecurity"
+        year: 2025
+        id: "f95fb9f4-cf5e-4f50-a3cd-db0d0d6fb11f"
+      - name: "FortiGate 7.4 Operator"
+        year: 2025
+        id: "f641e814-d037-40e2-bd61-b133b4ccf607"
+      - name: "NSE 3 Certified in Cybersecurity"
+        year: 2025
+        id: "432c078e-ee4b-40c2-833b-8491e60bcab5"
+  - issuer: "VMware · Broadcom"
+    color: "#78be20"
+    mono: "vS"
+    items:
+      - name: "Double VCP — Data Center Virtualization & VMware Cloud"
+        year: 2023
+        id: "7166bbc0-e12a-4411-8f3e-fc5cb0beda77"
+      - name: "Proven Professional — vSphere Architecture"
+        year: 2023
+        id: "c3b73804-4bdf-42bc-a27c-76c6860e3cab"
+      - name: "Proven Professional — vSphere Implementation"
+        year: 2023
+        id: "b69b7b8a-e413-4bfa-b71c-5d7749086de0"
+      - name: "Proven Professional — vSphere Support"
+        year: 2023
+        id: "a6f310e7-ca67-411c-9388-7705d369aa64"
+      - name: "Certified Expert — vSphere Pre-Sales"
+        year: 2023
+        id: "12e8df89-aa72-49fd-9b0c-8f3e2a993446"
+  - issuer: "Veeam"
+    color: "#16b862"
+    mono: "VE"
+    items:
+      - name: "Veeam Certified Engineer 2021 (VMCE v11)"
+        year: 2021
+        id: "cf36e51f-d0f8-4e5e-94ee-526809a6dcf7"
+      - name: "VBR v11: Architecture & Design (VMCA 2022)"
+        year: 2021
+        id: "d848d336-3c4a-46e3-9566-e8d55921bcc6"
+        # image: "badges/veeam-vmca.png"   # optional, once a real badge PNG exists

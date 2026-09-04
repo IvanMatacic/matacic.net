@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0c0f14"/><rect x="60" y="66" width="80" height="20" rx="3" fill="none" stroke="#f59e0b" stroke-width="4"/><rect x="60" y="94" width="80" height="20" rx="3" fill="none" stroke="#f59e0b" stroke-width="4"/><rect x="60" y="122" width="80" height="20" rx="3" fill="none" stroke="#f59e0b" stroke-width="4"/><circle cx="130" cy="76" r="3" fill="#22c55e"/><circle cx="130" cy="104" r="3" fill="#22c55e"/><circle cx="130" cy="132" r="3" fill="#22c55e"/></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #e7ebf0; }
+  a { color: #b45309; text-decoration: none; }
+  a:hover { color: #8a3f07; text-decoration: underline; }
+</style>
+</helmet>
+
+<section style="padding:64px;display:flex;flex-direction:column;gap:72px;font-family:'IBM Plex Sans', system-ui, sans-serif;">
+
+  <div style="display:flex;flex-direction:column;gap:10px;max-width:760px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#59636f;">Design proposal · Hugo theme</div>
+    <h1 style="margin:0;font-size:34px;font-weight:600;letter-spacing:-0.02em;color:#10151c;text-wrap:balance;">matacic.net — vizualni prijedlog</h1>
+    <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:16px;line-height:1.65;color:#59636f;">Deset ekrana (desktop, mobile, dark mode), interaktivni theme toggle i Copy gumb te referenca tokena. Boje, tipografija i komponente prate token listu iz specifikacije: hladni slate neutrali, jedan topli amber accent i ikona servera kao znak.</p>
+  </div>
+
+  <!-- ============ SCREEN 1 — HOME ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">01 · Home — /</div>
+    <div data-screen-label="01 Home" style="width:1180px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 56px;border-bottom:1px solid #dfe5ec;background:#fbfcfd;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:16px;font-weight:500;color:#10151c;">
+          <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="20" height="20" style="width:20px;height:20px;display:block;image-rendering:auto;">
+          <span>matacic<span style="color:#b45309;">.net</span></span>
+        </div>
+        <nav style="display:flex;align-items:center;gap:28px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="color:#b45309;border-bottom:1px solid #b45309;padding-bottom:2px;">Writing</a>
+          <a href="#" style="color:#59636f;">Notes</a>
+          <a href="#" style="color:#59636f;">Homelab</a>
+          <a href="#" style="color:#59636f;">About / CV</a>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #dfe5ec;border-radius:4px;background:#ffffff;color:#59636f;font-size:12px;">◐</span>
+        </nav>
+      </header>
+
+      <main style="padding:64px 56px 56px;display:flex;flex-direction:column;gap:64px;">
+        <div style="max-width:720px;display:flex;flex-direction:column;gap:16px;">
+          <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b45309;">Systems &amp; Infrastructure</div>
+          <h1 style="margin:0;font-size:44px;line-height:1.1;font-weight:600;letter-spacing:-0.03em;color:#10151c;text-wrap:balance;">Ivan Matačić</h1>
+          <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:18px;line-height:1.7;color:#59636f;max-width:660px;text-wrap:pretty;">Systems administrator working with virtualization, storage, backup and networking. I design, run and troubleshoot the infrastructure behind production — and write down the fixes, failures and homelab experiments so I (and you) don't have to solve them twice.</p>
+          <div style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;padding-top:6px;">
+            <span>VMware · NetApp · Veeam</span><span>·</span><span>Zagreb, HR</span><span>·</span><span style="font-variant-numeric:tabular-nums;">since 2019</span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;">Topics</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #c9d2dc;border-radius:3px;background:#fdf1e0;color:#b45309;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">Homelab <span style="color:#8a94a1;font-variant-numeric:tabular-nums;">7</span></a>
+            <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">Veeam <span style="color:#8a94a1;font-variant-numeric:tabular-nums;">5</span></a>
+            <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">vSphere <span style="color:#8a94a1;font-variant-numeric:tabular-nums;">4</span></a>
+            <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">NetApp <span style="color:#8a94a1;font-variant-numeric:tabular-nums;">3</span></a>
+            <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">Networking <span style="color:#8a94a1;font-variant-numeric:tabular-nums;">3</span></a>
+            <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">Fortinet <span style="color:#8a94a1;font-variant-numeric:tabular-nums;">2</span></a>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:4px;max-width:760px;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #c9d2dc;padding-bottom:12px;margin-bottom:12px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;">Latest</div>
+            <a href="#" style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;">All writing →</a>
+          </div>
+
+          <article style="display:flex;flex-direction:column;gap:7px;padding:20px 0;border-bottom:1px solid #dfe5ec;">
+            <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+              <span style="color:#b45309;">Homelab</span><span>·</span><span style="font-variant-numeric:tabular-nums;">2026-08-14</span><span>·</span><span>9 min read</span>
+            </div>
+            <h2 style="margin:0;font-size:23px;line-height:1.3;font-weight:600;letter-spacing:-0.015em;color:#10151c;text-wrap:balance;"><a href="#" style="color:#10151c;">Exposing a homelab service with Cloudflare Tunnel — no open ports</a></h2>
+            <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:15.5px;line-height:1.65;color:#59636f;text-wrap:pretty;">Port forwarding on a home router is a liability you maintain forever. A tunnel inverts the direction: the box dials out, nothing listens on the WAN side.</p>
+          </article>
+
+          <article style="display:flex;flex-direction:column;gap:7px;padding:20px 0;border-bottom:1px solid #dfe5ec;">
+            <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+              <span style="color:#b45309;">Veeam</span><span>·</span><span style="font-variant-numeric:tabular-nums;">2026-07-29</span><span>·</span><span>7 min read</span>
+            </div>
+            <h2 style="margin:0;font-size:23px;line-height:1.3;font-weight:600;letter-spacing:-0.015em;color:#10151c;text-wrap:balance;"><a href="#" style="color:#10151c;">The Veeam restore that failed — and what it taught me about DR testing</a></h2>
+            <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:15.5px;line-height:1.65;color:#59636f;text-wrap:pretty;">The backup job was green for fourteen months. The restore was not. Here is the gap between a successful job and a recoverable service.</p>
+          </article>
+
+          <article style="display:flex;flex-direction:column;gap:7px;padding:20px 0;border-bottom:1px solid #dfe5ec;">
+            <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+              <span style="color:#b45309;">vSphere</span><span>·</span><span style="font-variant-numeric:tabular-nums;">2026-07-02</span><span>·</span><span>11 min read</span>
+            </div>
+            <h2 style="margin:0;font-size:23px;line-height:1.3;font-weight:600;letter-spacing:-0.015em;color:#10151c;text-wrap:balance;"><a href="#" style="color:#10151c;">Placeholder — treći članak stoji ovdje</a></h2>
+            <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:15.5px;line-height:1.65;color:#59636f;text-wrap:pretty;">Lista prikazuje pet najnovijih postova iz sekcije Writing, kao tipografski indeks bez slika i kartica.</p>
+          </article>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:0;max-width:760px;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #c9d2dc;padding-bottom:12px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;">Recent notes</div>
+            <a href="#" style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;">All notes →</a>
+          </div>
+          <a href="#" style="display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+            <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;min-width:90px;">2026-08-22</span>
+            <span style="font-size:15.5px;">Filtering journalctl to a single unit and boot</span>
+          </a>
+          <a href="#" style="display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+            <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;min-width:90px;">2026-08-11</span>
+            <span style="font-size:15.5px;">Mikrotik export hides default values — use <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:14px;background:#f2f5f8;padding:1px 5px;border-radius:3px;">verbose</span></span>
+          </a>
+          <a href="#" style="display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+            <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;min-width:90px;">2026-07-30</span>
+            <span style="font-size:15.5px;">Listing VM world IDs from the ESXi shell</span>
+          </a>
+          <a href="#" style="display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+            <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;min-width:90px;">2026-07-18</span>
+            <span style="font-size:15.5px;">Placeholder — četvrta nota</span>
+          </a>
+        </div>
+      </main>
+
+      <footer style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 56px;border-top:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+        <span>© 2026 Ivan Matačić</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#" style="color:#59636f;">RSS</a>
+          <a href="#" style="color:#59636f;">GitHub</a>
+          <a href="#" style="color:#59636f;">LinkedIn</a>
+          <a href="#" style="color:#59636f;">Credly</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 2 — ARTICLE ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">02 · Article — /writing/&lt;slug&gt;/ · sticky ToC rail ≥1100px</div>
+    <div data-screen-label="02 Article" style="width:1180px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 56px;border-bottom:1px solid #dfe5ec;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:16px;font-weight:500;color:#10151c;">
+          <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="20" height="20" style="width:20px;height:20px;display:block;image-rendering:auto;">
+          <span>matacic<span style="color:#b45309;">.net</span></span>
+        </div>
+        <nav style="display:flex;align-items:center;gap:28px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="color:#b45309;border-bottom:1px solid #b45309;padding-bottom:2px;">Writing</a>
+          <a href="#" style="color:#59636f;">Notes</a>
+          <a href="#" style="color:#59636f;">Homelab</a>
+          <a href="#" style="color:#59636f;">About / CV</a>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #dfe5ec;border-radius:4px;background:#ffffff;color:#59636f;font-size:12px;">◐</span>
+        </nav>
+      </header>
+
+      <div style="display:grid;grid-template-columns:200px 720px;gap:56px;padding:56px 56px 48px;justify-content:center;">
+
+        <sc-if value="{{ showTocRail }}" hint-placeholder-val="{{ true }}">
+        <aside style="display:flex;flex-direction:column;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;line-height:1.6;position:sticky;top:24px;align-self:start;">
+          <div style="letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;padding-bottom:6px;">Contents</div>
+          <a href="#" style="color:#b45309;border-left:2px solid #b45309;padding-left:10px;">Why not port forwarding</a>
+          <a href="#" style="color:#59636f;border-left:2px solid #dfe5ec;padding-left:10px;">Installing cloudflared</a>
+          <a href="#" style="color:#8a94a1;border-left:2px solid #dfe5ec;padding-left:20px;">Named tunnels vs. quick</a>
+          <a href="#" style="color:#59636f;border-left:2px solid #dfe5ec;padding-left:10px;">Routing DNS to the tunnel</a>
+          <a href="#" style="color:#59636f;border-left:2px solid #dfe5ec;padding-left:10px;">Locking it down with Access</a>
+          <a href="#" style="color:#59636f;border-left:2px solid #dfe5ec;padding-left:10px;">Takeaway</a>
+        </aside>
+        </sc-if>
+
+        <article style="display:flex;flex-direction:column;gap:0;">
+          <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+            <a href="#" style="color:#b45309;">Homelab</a><span>·</span><span style="font-variant-numeric:tabular-nums;">2026-08-14</span><span>·</span><span>9 min read</span>
+          </div>
+          <h1 style="margin:14px 0 0;font-size:38px;line-height:1.15;font-weight:600;letter-spacing:-0.025em;color:#10151c;text-wrap:balance;">Exposing a homelab service with Cloudflare Tunnel — no open ports</h1>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin:22px 0 0;">
+            <a href="#" style="padding:4px 10px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">cloudflare</a>
+            <a href="#" style="padding:4px 10px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">self-hosting</a>
+            <a href="#" style="padding:4px 10px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">networking</a>
+          </div>
+          <div style="height:1px;background:#dfe5ec;margin:28px 0 32px;"></div>
+
+          <p style="margin:0 0 20px;font-family:'IBM Plex Serif', Georgia, serif;font-size:17.5px;line-height:1.75;color:#10151c;text-wrap:pretty;">Every service I run at home used to end the same way: one more port forward on the router, one more thing to remember when something breaks at 23:00. A Cloudflare Tunnel removes the inbound rule entirely — the host dials out, and nothing on the WAN side listens.</p>
+          <h2 style="margin:36px 0 12px;font-size:25px;font-weight:600;letter-spacing:-0.015em;color:#10151c;text-wrap:balance;">Why not port forwarding</h2>
+          <p style="margin:0 0 20px;font-family:'IBM Plex Serif', Georgia, serif;font-size:17.5px;line-height:1.75;color:#10151c;text-wrap:pretty;">An open port is a permanent commitment: TLS certificates, a dynamic IP, and an exposed service you now have to patch on someone else's schedule. The tunnel moves that surface to Cloudflare's edge.</p>
+          <h2 style="margin:36px 0 12px;font-size:25px;font-weight:600;letter-spacing:-0.015em;color:#10151c;text-wrap:balance;">Installing cloudflared</h2>
+          <p style="margin:0 0 8px;font-family:'IBM Plex Serif', Georgia, serif;font-size:17.5px;line-height:1.75;color:#10151c;text-wrap:pretty;">On a Debian host, add the repository and install the daemon, then authenticate against the zone:</p>
+
+          <div style="margin:24px 0 20px;border:1px solid #232a34;border-radius:5px;background:#0c0f14;overflow:hidden;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid #232a34;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6b7684;">
+              <span>bash</span>
+              <span style="padding:3px 9px;border:1px solid #323b48;border-radius:3px;color:#9aa5b1;letter-spacing:.14em;">Copy</span>
+            </div>
+            <pre style="margin:0;padding:18px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13.5px;line-height:1.8;color:#e8edf3;overflow:auto;">cloudflared tunnel login
+cloudflared tunnel create homelab
+cloudflared tunnel route dns homelab grafana.matacic.net</pre>
+          </div>
+
+          <h3 style="margin:30px 0 10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#59636f;">Named tunnels vs. quick tunnels</h3>
+          <p style="margin:0 0 20px;font-family:'IBM Plex Serif', Georgia, serif;font-size:17.5px;line-height:1.75;color:#10151c;text-wrap:pretty;">Quick tunnels are fine for a five-minute demo. Anything you intend to keep should be a named tunnel with credentials on disk and a systemd unit, so it survives a reboot without you.</p>
+
+          <blockquote style="margin:28px 0;padding:16px 22px;border-left:3px solid #b45309;background:#fdf1e0;font-family:'IBM Plex Serif', Georgia, serif;font-size:17px;line-height:1.7;font-style:italic;color:#10151c;">Takeaway: if the only way into your network is outbound, an inbound misconfiguration cannot exist.</blockquote>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:36px;padding-top:24px;border-top:1px solid #dfe5ec;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;">
+            <a href="#" style="color:#59636f;">← The Veeam restore that failed</a>
+            <a href="#" style="color:#59636f;">All writing →</a>
+          </div>
+        </article>
+      </div>
+
+      <footer style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 56px;border-top:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+        <span>© 2026 Ivan Matačić</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#" style="color:#59636f;">RSS</a>
+          <a href="#" style="color:#59636f;">GitHub</a>
+          <a href="#" style="color:#59636f;">LinkedIn</a>
+          <a href="#" style="color:#59636f;">Credly</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 3 — NOTE ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">03 · Note — /notes/&lt;slug&gt;/ · lakši layout, bez ToC-a</div>
+    <div data-screen-label="03 Note" style="width:1180px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 56px;border-bottom:1px solid #dfe5ec;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:16px;font-weight:500;color:#10151c;">
+          <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="20" height="20" style="width:20px;height:20px;display:block;image-rendering:auto;">
+          <span>matacic<span style="color:#b45309;">.net</span></span>
+        </div>
+        <nav style="display:flex;align-items:center;gap:28px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="color:#59636f;">Writing</a>
+          <a href="#" style="color:#b45309;border-bottom:1px solid #b45309;padding-bottom:2px;">Notes</a>
+          <a href="#" style="color:#59636f;">Homelab</a>
+          <a href="#" style="color:#59636f;">About / CV</a>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #dfe5ec;border-radius:4px;background:#ffffff;color:#59636f;font-size:12px;">◐</span>
+        </nav>
+      </header>
+
+      <div style="padding:56px 56px 48px;display:flex;justify-content:center;">
+        <article style="width:720px;display:flex;flex-direction:column;gap:0;">
+          <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2026-08-22</div>
+          <h1 style="margin:10px 0 24px;font-size:27px;line-height:1.25;font-weight:600;letter-spacing:-0.015em;color:#10151c;text-wrap:balance;">Filtering journalctl to a single unit and boot</h1>
+          <p style="margin:0 0 8px;font-family:'IBM Plex Serif', Georgia, serif;font-size:17px;line-height:1.75;color:#10151c;text-wrap:pretty;">Scrolling the whole journal to find one service's last failure is wasted time. Scope it to the unit and the current boot, and the noise disappears.</p>
+
+          <div style="margin:22px 0;border:1px solid #232a34;border-radius:5px;background:#0c0f14;overflow:hidden;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid #232a34;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6b7684;">
+              <span>bash</span>
+              <span style="padding:3px 9px;border:1px solid #323b48;border-radius:3px;color:#9aa5b1;letter-spacing:.14em;">Copy</span>
+            </div>
+            <pre style="margin:0;padding:18px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13.5px;line-height:1.8;color:#e8edf3;overflow:auto;">journalctl -u cloudflared -b -p warning --no-pager</pre>
+          </div>
+
+          <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:17px;line-height:1.75;color:#10151c;text-wrap:pretty;">Add <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:14.5px;background:#f2f5f8;padding:1px 5px;border-radius:3px;">-f</span> to follow it live, or <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:14.5px;background:#f2f5f8;padding:1px 5px;border-radius:3px;">-b -1</span> to read the boot before the reboot that hid the evidence.</p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin:28px 0 0;padding-top:24px;border-top:1px solid #dfe5ec;">
+            <a href="#" style="padding:4px 10px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">linux</a>
+            <a href="#" style="padding:4px 10px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">systemd</a>
+          </div>
+        </article>
+      </div>
+
+      <footer style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 56px;border-top:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+        <span>© 2026 Ivan Matačić</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#" style="color:#59636f;">RSS</a>
+          <a href="#" style="color:#59636f;">GitHub</a>
+          <a href="#" style="color:#59636f;">LinkedIn</a>
+          <a href="#" style="color:#59636f;">Credly</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 4 — ABOUT / CV ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">04 · About / CV — /about/ · 13 certifikata iz data/certifications.yaml</div>
+    <div data-screen-label="04 About" style="width:1180px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 56px;border-bottom:1px solid #dfe5ec;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:16px;font-weight:500;color:#10151c;">
+          <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="20" height="20" style="width:20px;height:20px;display:block;image-rendering:auto;">
+          <span>matacic<span style="color:#b45309;">.net</span></span>
+        </div>
+        <nav style="display:flex;align-items:center;gap:28px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="color:#59636f;">Writing</a>
+          <a href="#" style="color:#59636f;">Notes</a>
+          <a href="#" style="color:#59636f;">Homelab</a>
+          <a href="#" style="color:#b45309;border-bottom:1px solid #b45309;padding-bottom:2px;">About / CV</a>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #dfe5ec;border-radius:4px;background:#ffffff;color:#59636f;font-size:12px;">◐</span>
+        </nav>
+      </header>
+
+      <div style="padding:56px;display:flex;flex-direction:column;gap:56px;align-items:center;">
+
+        <div style="width:820px;display:flex;flex-direction:column;gap:14px;">
+          <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b45309;">About / CV</div>
+          <h1 style="margin:0;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-0.025em;color:#10151c;">Ivan Matačić</h1>
+          <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:17.5px;line-height:1.75;color:#59636f;max-width:720px;text-wrap:pretty;">Systems administrator in Zagreb. My day-to-day is vSphere clusters, NetApp storage, Veeam backup and the networking that ties them together — plus the restores, migrations and post-mortems nobody puts in a job description.</p>
+        </div>
+
+        <div style="width:820px;display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+          <div style="padding:22px 24px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;">Focus</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5;color:#10151c;">
+              <span>Virtualization — vSphere, ESXi, vCenter</span>
+              <span>Storage — NetApp ONTAP, SAN/NAS</span>
+              <span>Backup &amp; DR — Veeam, restore testing</span>
+              <span>Networking — routing, VLANs, firewalls</span>
+            </div>
+          </div>
+          <div style="padding:22px 24px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;">Experience</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;flex-direction:column;gap:2px;">
+                <span style="font-size:15px;color:#10151c;">Systems Administrator</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">PLACEHOLDER · 2019 — present</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2px;">
+                <span style="font-size:15px;color:#10151c;">Placeholder — prethodna rola</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">PLACEHOLDER · 20XX — 2019</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div style="width:820px;display:flex;flex-direction:column;gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #c9d2dc;padding-bottom:14px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;">Certifications</div>
+            <div style="font-family:'IBM Plex Serif', Georgia, serif;font-size:15.5px;color:#59636f;"><span style="font-variant-numeric:tabular-nums;">13</span> verified badges across 5 issuers — every entry links to its Credly verification.</div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#10151c;">Amazon Web Services</span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;padding:2px 8px;border-radius:20px;background:#f2f5f8;border:1px solid #dfe5ec;color:#59636f;font-variant-numeric:tabular-nums;">1</span>
+              <span style="flex:1;height:1px;background:#dfe5ec;"></span>
+            </div>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#ff9900;flex:none;">AWS</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">AWS Certified CloudOps Engineer – Associate</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2025</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#10151c;">NetApp</span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;padding:2px 8px;border-radius:20px;background:#f2f5f8;border:1px solid #dfe5ec;color:#59636f;font-variant-numeric:tabular-nums;">2</span>
+              <span style="flex:1;height:1px;background:#dfe5ec;"></span>
+            </div>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#0a7fd6;flex:none;">NA</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Accredited Hybrid Cloud Associate</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2025</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#0a7fd6;flex:none;">NA</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Accredited Cloud Native Associate</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2025</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#10151c;">Fortinet</span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;padding:2px 8px;border-radius:20px;background:#f2f5f8;border:1px solid #dfe5ec;color:#59636f;font-variant-numeric:tabular-nums;">3</span>
+              <span style="flex:1;height:1px;background:#dfe5ec;"></span>
+            </div>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#e02a2a;flex:none;">FN</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Certified Associate Cybersecurity</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2025</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#e02a2a;flex:none;">FN</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">FortiGate 7.4 Operator</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2025</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#e02a2a;flex:none;">FN</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">NSE 3 Certified in Cybersecurity</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2025</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#10151c;">VMware · Broadcom</span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;padding:2px 8px;border-radius:20px;background:#f2f5f8;border:1px solid #dfe5ec;color:#59636f;font-variant-numeric:tabular-nums;">5</span>
+              <span style="flex:1;height:1px;background:#dfe5ec;"></span>
+            </div>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#78be20;flex:none;">vS</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Double VCP — Data Center Virtualization &amp; VMware Cloud</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2023</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#78be20;flex:none;">vS</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Proven Professional — vSphere Architecture</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2023</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#78be20;flex:none;">vS</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Proven Professional — vSphere Implementation</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2023</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#78be20;flex:none;">vS</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Proven Professional — vSphere Support</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2023</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#78be20;flex:none;">vS</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Certified Expert — vSphere Pre-Sales</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2023</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#10151c;">Veeam</span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;padding:2px 8px;border-radius:20px;background:#f2f5f8;border:1px solid #dfe5ec;color:#59636f;font-variant-numeric:tabular-nums;">2</span>
+              <span style="flex:1;height:1px;background:#dfe5ec;"></span>
+            </div>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#16b862;flex:none;">VE</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">Veeam Certified Engineer 2021 (VMCE v11)</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2021</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;color:#10151c;">
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;font-weight:600;color:#16b862;flex:none;">VE</span>
+              <span style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:15px;line-height:1.35;">VBR v11: Architecture &amp; Design (VMCA 2022)</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2021</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b45309;">Verify ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="width:820px;padding:28px 32px;border:1px solid #c9d2dc;border-radius:5px;background:#fdf1e0;display:flex;align-items:center;justify-content:space-between;gap:32px;">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b45309;">Get in touch</div>
+            <div style="font-family:'IBM Plex Serif', Georgia, serif;font-size:16px;color:#10151c;">Email is the fastest way to reach me. No forms, no trackers.</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;flex:none;">
+            <a href="#" style="padding:11px 20px;border-radius:4px;background:#b45309;color:#ffffff;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;">hello@matacic.net</a>
+            <a href="#" style="padding:11px 20px;border-radius:4px;border:1px solid #c9d2dc;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <footer style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 56px;border-top:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+        <span>© 2026 Ivan Matačić</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#" style="color:#59636f;">RSS</a>
+          <a href="#" style="color:#59636f;">GitHub</a>
+          <a href="#" style="color:#59636f;">LinkedIn</a>
+          <a href="#" style="color:#59636f;">Credly</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 5 — HOMELAB ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">05 · Homelab — /homelab/</div>
+    <div data-screen-label="05 Homelab" style="width:1180px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 56px;border-bottom:1px solid #dfe5ec;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:16px;font-weight:500;color:#10151c;">
+          <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="20" height="20" style="width:20px;height:20px;display:block;image-rendering:auto;">
+          <span>matacic<span style="color:#b45309;">.net</span></span>
+        </div>
+        <nav style="display:flex;align-items:center;gap:28px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="color:#59636f;">Writing</a>
+          <a href="#" style="color:#59636f;">Notes</a>
+          <a href="#" style="color:#b45309;border-bottom:1px solid #b45309;padding-bottom:2px;">Homelab</a>
+          <a href="#" style="color:#59636f;">About / CV</a>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #dfe5ec;border-radius:4px;background:#ffffff;color:#59636f;font-size:12px;">◐</span>
+        </nav>
+      </header>
+
+      <div style="padding:56px;display:flex;flex-direction:column;gap:44px;align-items:center;">
+        <div style="width:860px;display:flex;flex-direction:column;gap:14px;">
+          <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b45309;">Homelab</div>
+          <h1 style="margin:0;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-0.025em;color:#10151c;">Current setup</h1>
+          <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:17px;line-height:1.75;color:#59636f;max-width:720px;text-wrap:pretty;">Three nodes, one switch and more services than are strictly necessary. This page is the reference I keep for myself — what runs where, and on which box.</p>
+        </div>
+
+        <div style="width:860px;border:1px solid #dfe5ec;border-radius:5px;background:#ffffff;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:150px 150px 1fr 220px;gap:0;padding:12px 20px;background:#f2f5f8;border-bottom:1px solid #dfe5ec;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#59636f;">
+            <span>Host</span><span>Role</span><span>Specs</span><span>Notes</span>
+          </div>
+          <div style="display:grid;grid-template-columns:150px 150px 1fr 220px;gap:0;padding:15px 20px;border-bottom:1px solid #dfe5ec;font-size:14px;color:#10151c;align-items:baseline;">
+            <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;">esxi-01</span><span style="color:#59636f;">Hypervisor</span><span style="color:#59636f;">PLACEHOLDER · CPU / RAM / disk</span><span style="color:#8a94a1;">Main VM host</span>
+          </div>
+          <div style="display:grid;grid-template-columns:150px 150px 1fr 220px;gap:0;padding:15px 20px;border-bottom:1px solid #dfe5ec;font-size:14px;color:#10151c;align-items:baseline;">
+            <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;">nas-01</span><span style="color:#59636f;">Storage</span><span style="color:#59636f;">PLACEHOLDER · pool / raid level</span><span style="color:#8a94a1;">NFS + iSCSI datastores</span>
+          </div>
+          <div style="display:grid;grid-template-columns:150px 150px 1fr 220px;gap:0;padding:15px 20px;font-size:14px;color:#10151c;align-items:baseline;">
+            <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;">rtr-01</span><span style="color:#59636f;">Router</span><span style="color:#59636f;">PLACEHOLDER · model / firmware</span><span style="color:#8a94a1;">VLANs, WireGuard</span>
+          </div>
+        </div>
+
+        <div style="width:860px;display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;border-bottom:1px solid #dfe5ec;padding-bottom:10px;">What runs where</div>
+            <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px;color:#10151c;">
+              <span><span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;color:#b45309;">esxi-01</span> — vCenter, Grafana, Gitea</span>
+              <span><span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;color:#b45309;">nas-01</span> — Veeam repository, media</span>
+              <span><span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;color:#b45309;">rtr-01</span> — DNS, DHCP, cloudflared</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;border-bottom:1px solid #dfe5ec;padding-bottom:10px;">Posts tagged Homelab</div>
+            <div style="display:flex;flex-direction:column;gap:11px;">
+              <a href="#" style="display:flex;flex-direction:column;gap:2px;color:#10151c;">
+                <span style="font-size:14.5px;line-height:1.35;">Exposing a homelab service with Cloudflare Tunnel</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2026-08-14</span>
+              </a>
+              <a href="#" style="display:flex;flex-direction:column;gap:2px;color:#10151c;">
+                <span style="font-size:14.5px;line-height:1.35;">Placeholder — auto-generirano iz taksonomije</span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;">2026-05-03</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 56px;border-top:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+        <span>© 2026 Ivan Matačić</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#" style="color:#59636f;">RSS</a>
+          <a href="#" style="color:#59636f;">GitHub</a>
+          <a href="#" style="color:#59636f;">LinkedIn</a>
+          <a href="#" style="color:#59636f;">Credly</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 07 — WRITING LIST ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">07 · Writing — /writing/ · grupirano po godini</div>
+    <div data-screen-label="07 Writing" style="width:1180px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 56px;border-bottom:1px solid #dfe5ec;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:16px;font-weight:500;color:#10151c;">
+          <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="20" height="20" style="width:20px;height:20px;display:block;">
+          <span>matacic<span style="color:#b45309;">.net</span></span>
+        </div>
+        <nav style="display:flex;align-items:center;gap:28px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="color:#b45309;border-bottom:1px solid #b45309;padding-bottom:2px;">Writing</a>
+          <a href="#" style="color:#59636f;">Notes</a>
+          <a href="#" style="color:#59636f;">Homelab</a>
+          <a href="#" style="color:#59636f;">About / CV</a>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #dfe5ec;border-radius:4px;background:#ffffff;color:#59636f;font-size:12px;">◐</span>
+        </nav>
+      </header>
+      <div style="padding:56px;display:flex;justify-content:center;">
+        <div style="width:760px;display:flex;flex-direction:column;gap:40px;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b45309;">Writing</div>
+            <h1 style="margin:0;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-0.025em;color:#10151c;">All posts</h1>
+            <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:16.5px;line-height:1.7;color:#59636f;">Longer pieces: post-mortems, walkthroughs and things that took more than an afternoon to figure out. <span style="font-variant-numeric:tabular-nums;">12</span> posts.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:6px;">
+              <a href="#" style="padding:5px 11px;border:1px solid #c9d2dc;border-radius:3px;background:#fdf1e0;color:#b45309;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">All</a>
+              <a href="#" style="padding:5px 11px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">Homelab</a>
+              <a href="#" style="padding:5px 11px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">Veeam</a>
+              <a href="#" style="padding:5px 11px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">vSphere</a>
+              <a href="#" style="padding:5px 11px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">NetApp</a>
+              <a href="#" style="padding:5px 11px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#59636f;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">Networking</a>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:90px 1fr;gap:0 32px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:22px;font-weight:500;color:#c9d2dc;font-variant-numeric:tabular-nums;padding-top:18px;border-top:1px solid #c9d2dc;">2026</div>
+            <div style="display:flex;flex-direction:column;border-top:1px solid #c9d2dc;">
+              <a href="#" style="display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;">Aug 14</span>
+                <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;">Exposing a homelab service with Cloudflare Tunnel — no open ports</span><span style="font-family:'IBM Plex Serif', Georgia, serif;font-size:14.5px;line-height:1.55;color:#59636f;">Port forwarding on a home router is a liability you maintain forever.</span></span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#b45309;">Homelab</span>
+              </a>
+              <a href="#" style="display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;">Jul 29</span>
+                <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;">The Veeam restore that failed — and what it taught me about DR testing</span><span style="font-family:'IBM Plex Serif', Georgia, serif;font-size:14.5px;line-height:1.55;color:#59636f;">The backup job was green for fourteen months. The restore was not.</span></span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#b45309;">Veeam</span>
+              </a>
+              <a href="#" style="display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;">Jul 02</span>
+                <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;">Placeholder — treći članak</span><span style="font-family:'IBM Plex Serif', Georgia, serif;font-size:14.5px;line-height:1.55;color:#59636f;">Kratki opis iz front mattera (description).</span></span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#b45309;">vSphere</span>
+              </a>
+            </div>
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:22px;font-weight:500;color:#c9d2dc;font-variant-numeric:tabular-nums;padding-top:18px;margin-top:32px;border-top:1px solid #c9d2dc;">2025</div>
+            <div style="display:flex;flex-direction:column;margin-top:32px;border-top:1px solid #c9d2dc;">
+              <a href="#" style="display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;">Dec 11</span>
+                <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;">Placeholder — post iz prošle godine</span><span style="font-family:'IBM Plex Serif', Georgia, serif;font-size:14.5px;line-height:1.55;color:#59636f;">Godina se prikazuje samo jednom, kao rubna oznaka.</span></span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#b45309;">NetApp</span>
+              </a>
+              <a href="#" style="display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;">Oct 03</span>
+                <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;">Placeholder — još jedan post</span><span style="font-family:'IBM Plex Serif', Georgia, serif;font-size:14.5px;line-height:1.55;color:#59636f;">Bez paginacije do 50 postova, zatim po godinama.</span></span>
+                <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#b45309;">Networking</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 56px;border-top:1px solid #dfe5ec;background:#f2f5f8;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;">
+        <span>© 2026 Ivan Matačić</span>
+        <div style="display:flex;gap:20px;"><a href="#" style="color:#59636f;">RSS</a><a href="#" style="color:#59636f;">GitHub</a><a href="#" style="color:#59636f;">LinkedIn</a><a href="#" style="color:#59636f;">Credly</a></div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 08 — TOPIC + 404 ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">08 · Topic archive — /topics/veeam/ &nbsp;·&nbsp; 09 · 404</div>
+    <div style="display:flex;gap:24px;align-items:start;">
+      <div data-screen-label="08 Topic" style="flex:none;width:578px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+        <header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 32px;border-bottom:1px solid #dfe5ec;">
+          <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:15px;font-weight:500;color:#10151c;">
+            <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="18" height="18" style="width:18px;height:18px;display:block;">
+            <span>matacic<span style="color:#b45309;">.net</span></span>
+          </div>
+          <nav style="display:flex;align-items:center;gap:18px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;">
+            <a href="#" style="color:#b45309;border-bottom:1px solid #b45309;padding-bottom:2px;">Writing</a><a href="#" style="color:#59636f;">Notes</a><a href="#" style="color:#59636f;">Homelab</a><a href="#" style="color:#59636f;">About</a>
+          </nav>
+        </header>
+        <div style="padding:44px 32px;display:flex;flex-direction:column;gap:32px;">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="#" style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;">← All topics</a>
+            <h1 style="margin:0;display:flex;align-items:baseline;gap:14px;font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-0.025em;color:#10151c;">Veeam <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:14px;font-weight:400;color:#8a94a1;font-variant-numeric:tabular-nums;">5 posts · 3 notes</span></h1>
+            <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:15.5px;line-height:1.65;color:#59636f;">Backup &amp; Replication, repositories, restore testing and the occasional support ticket.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;padding-bottom:10px;border-bottom:1px solid #c9d2dc;">Writing</div>
+            <a href="#" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid #dfe5ec;color:#10151c;"><span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;min-width:82px;">2026-07-29</span><span style="font-size:15.5px;font-weight:600;line-height:1.35;">The Veeam restore that failed</span></a>
+            <a href="#" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid #dfe5ec;color:#10151c;"><span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;min-width:82px;">2026-03-02</span><span style="font-size:15.5px;font-weight:600;line-height:1.35;">Placeholder — immutable repo on Linux</span></a>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;padding-bottom:10px;border-bottom:1px solid #c9d2dc;">Notes</div>
+            <a href="#" style="display:flex;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid #dfe5ec;color:#10151c;"><span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;min-width:82px;">2026-06-14</span><span style="font-size:14.5px;">Placeholder — kratka nota</span></a>
+            <a href="#" style="display:flex;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid #dfe5ec;color:#10151c;"><span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#8a94a1;font-variant-numeric:tabular-nums;min-width:82px;">2026-02-20</span><span style="font-size:14.5px;">Placeholder — druga nota</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div data-screen-label="09 404" style="flex:none;width:578px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+        <header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 32px;border-bottom:1px solid #dfe5ec;">
+          <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:15px;font-weight:500;color:#10151c;">
+            <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="18" height="18" style="width:18px;height:18px;display:block;">
+            <span>matacic<span style="color:#b45309;">.net</span></span>
+          </div>
+          <nav style="display:flex;align-items:center;gap:18px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;">
+            <a href="#" style="color:#59636f;">Writing</a><a href="#" style="color:#59636f;">Notes</a><a href="#" style="color:#59636f;">Homelab</a><a href="#" style="color:#59636f;">About</a>
+          </nav>
+        </header>
+        <div style="padding:72px 32px 80px;display:flex;flex-direction:column;gap:22px;">
+          <div style="border:1px solid #232a34;border-radius:5px;background:#0c0f14;overflow:hidden;">
+            <div style="padding:9px 14px;border-bottom:1px solid #232a34;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6b7684;">bash</div>
+            <pre style="margin:0;padding:18px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13.5px;line-height:1.8;color:#e8edf3;overflow:auto;"><span style="color:#6b7684;">$</span> curl -I matacic.net/this-page
+<span style="color:#f59e0b;">HTTP/2 404</span>
+<span style="color:#6b7684;">$</span> ls /writing/this-page
+ls: cannot access '/writing/this-page': <span style="color:#f59e0b;">No such file or directory</span></pre>
+          </div>
+          <h1 style="margin:8px 0 0;font-size:30px;line-height:1.15;font-weight:600;letter-spacing:-0.025em;color:#10151c;">Page not found</h1>
+          <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:16px;line-height:1.7;color:#59636f;">Moved, renamed or never existed. The search below covers every post and note.</p>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid #c9d2dc;border-radius:4px;background:#ffffff;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;color:#8a94a1;"><span style="color:#b45309;">/</span><span>search posts and notes…</span></div>
+          <div style="display:flex;gap:20px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;"><a href="#">← Home</a><a href="#" style="color:#59636f;">All writing</a><a href="#" style="color:#59636f;">All notes</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 10 — MOBILE ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">10 · Mobile ≤768px — Home, otvoren meni, Article (ToC kao sklopivi blok)</div>
+    <div style="display:flex;gap:24px;align-items:start;">
+
+      <div data-screen-label="10a Mobile Home" style="flex:none;width:390px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+        <header style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #dfe5ec;">
+          <div style="display:flex;align-items:center;gap:9px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:15px;font-weight:500;color:#10151c;">
+            <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="18" height="18" style="width:18px;height:18px;display:block;">
+            <span>matacic<span style="color:#b45309;">.net</span></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:#59636f;font-size:13px;">◐</span>
+            <span style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;align-items:center;"><span style="width:18px;height:1.5px;background:#10151c;"></span><span style="width:18px;height:1.5px;background:#10151c;"></span></span>
+          </div>
+        </header>
+        <div style="padding:36px 20px 32px;display:flex;flex-direction:column;gap:36px;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#b45309;">Systems &amp; Infrastructure</div>
+            <h1 style="margin:0;font-size:32px;line-height:1.1;font-weight:600;letter-spacing:-0.03em;color:#10151c;">Ivan Matačić</h1>
+            <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:16px;line-height:1.65;color:#59636f;text-wrap:pretty;">Systems administrator working with virtualization, storage, backup and networking. Fixes, failures and homelab experiments, written down.</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="padding:8px 12px;border:1px solid #c9d2dc;border-radius:3px;background:#fdf1e0;color:#b45309;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">Homelab 7</span>
+            <span style="padding:8px 12px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">Veeam 5</span>
+            <span style="padding:8px 12px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">vSphere 4</span>
+            <span style="padding:8px 12px;border:1px solid #dfe5ec;border-radius:3px;background:#ffffff;color:#10151c;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">NetApp 3</span>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;padding-bottom:10px;border-bottom:1px solid #c9d2dc;">Latest</div>
+            <article style="display:flex;flex-direction:column;gap:6px;padding:16px 0;border-bottom:1px solid #dfe5ec;">
+              <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;color:#8a94a1;"><span style="color:#b45309;">Homelab</span> · 2026-08-14 · 9 min</div>
+              <h2 style="margin:0;font-size:19px;line-height:1.3;font-weight:600;letter-spacing:-0.01em;color:#10151c;">Exposing a homelab service with Cloudflare Tunnel — no open ports</h2>
+            </article>
+            <article style="display:flex;flex-direction:column;gap:6px;padding:16px 0;border-bottom:1px solid #dfe5ec;">
+              <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;color:#8a94a1;"><span style="color:#b45309;">Veeam</span> · 2026-07-29 · 7 min</div>
+              <h2 style="margin:0;font-size:19px;line-height:1.3;font-weight:600;letter-spacing:-0.01em;color:#10151c;">The Veeam restore that failed — and what it taught me about DR testing</h2>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div data-screen-label="10b Mobile Menu" style="flex:none;width:390px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+        <header style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #dfe5ec;">
+          <div style="display:flex;align-items:center;gap:9px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:15px;font-weight:500;color:#10151c;">
+            <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="18" height="18" style="width:18px;height:18px;display:block;">
+            <span>matacic<span style="color:#b45309;">.net</span></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:#59636f;font-size:13px;">◐</span>
+            <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:#10151c;font-size:18px;">×</span>
+          </div>
+        </header>
+        <nav style="display:flex;flex-direction:column;padding:12px 20px 28px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:15px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#b45309;">Writing <span style="font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;">12</span></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">Notes <span style="font-size:12px;color:#8a94a1;font-variant-numeric:tabular-nums;">31</span></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">Homelab</a>
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid #dfe5ec;color:#10151c;">About / CV</a>
+          <div style="display:flex;gap:18px;padding-top:24px;font-size:11.5px;color:#8a94a1;"><a href="#" style="color:#59636f;">RSS</a><a href="#" style="color:#59636f;">GitHub</a><a href="#" style="color:#59636f;">LinkedIn</a><a href="#" style="color:#59636f;">Credly</a></div>
+        </nav>
+        <div style="height:420px;background:#f2f5f8;"></div>
+      </div>
+
+      <div data-screen-label="10c Mobile Article" style="flex:none;width:390px;background:#fbfcfd;border:1px solid #dfe5ec;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.06);">
+        <header style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #dfe5ec;">
+          <div style="display:flex;align-items:center;gap:9px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:15px;font-weight:500;color:#10151c;">
+            <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="18" height="18" style="width:18px;height:18px;display:block;">
+            <span>matacic<span style="color:#b45309;">.net</span></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:#59636f;font-size:13px;">◐</span>
+            <span style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;align-items:center;"><span style="width:18px;height:1.5px;background:#10151c;"></span><span style="width:18px;height:1.5px;background:#10151c;"></span></span>
+          </div>
+        </header>
+        <article style="padding:32px 20px;display:flex;flex-direction:column;">
+          <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;color:#8a94a1;"><span style="color:#b45309;">Homelab</span> · 2026-08-14 · 9 min read</div>
+          <h1 style="margin:12px 0 0;font-size:27px;line-height:1.2;font-weight:600;letter-spacing:-0.025em;color:#10151c;">Exposing a homelab service with Cloudflare Tunnel — no open ports</h1>
+          <div style="margin:24px 0 0;border:1px solid #dfe5ec;border-radius:4px;background:#f2f5f8;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#59636f;"><span>Contents</span><span>▾</span></div>
+            <div style="display:flex;flex-direction:column;gap:9px;padding:0 14px 14px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;line-height:1.5;">
+              <a href="#" style="color:#b45309;">Why not port forwarding</a><a href="#" style="color:#59636f;">Installing cloudflared</a><a href="#" style="color:#59636f;">Routing DNS to the tunnel</a><a href="#" style="color:#59636f;">Locking it down with Access</a><a href="#" style="color:#59636f;">Takeaway</a>
+            </div>
+          </div>
+          <p style="margin:28px 0 0;font-family:'IBM Plex Serif', Georgia, serif;font-size:17px;line-height:1.7;color:#10151c;text-wrap:pretty;">Every service I run at home used to end the same way: one more port forward on the router, one more thing to remember when something breaks at 23:00.</p>
+          <div style="margin:22px -20px 0;border-top:1px solid #232a34;border-bottom:1px solid #232a34;background:#0c0f14;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 20px;border-bottom:1px solid #232a34;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6b7684;"><span>bash</span><span style="padding:3px 9px;border:1px solid #323b48;border-radius:3px;color:#9aa5b1;">Copy</span></div>
+            <pre style="margin:0;padding:16px 20px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;line-height:1.75;color:#e8edf3;overflow:auto;">cloudflared tunnel login
+cloudflared tunnel create homelab</pre>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ INTERACTIONS ============ -->
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">Interakcije · klikni ◐ za temu, Copy za kopiranje · prijelaz 150ms, ikona bez filtera u light / brightness u dark</div>
+    <div data-screen-label="Interactions" style="width:760px;--bg:{{ t.bg }};--surface:{{ t.surface }};--surface2:{{ t.surface2 }};--border:{{ t.border }};--ink:{{ t.ink }};--muted:{{ t.muted }};--faint:{{ t.faint }};--accent:{{ t.accent }};--soft:{{ t.soft }};background:var(--bg);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:background .15s, border-color .15s;">
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 32px;border-bottom:1px solid var(--border);transition:border-color .15s;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:16px;font-weight:500;color:var(--ink);transition:color .15s;">
+          <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="20" height="20" style="width:20px;height:20px;display:block;filter:{{ t.iconFilter }};transition:filter .15s;">
+          <span>matacic<span style="color:var(--accent);">.net</span></span>
+        </div>
+        <nav style="display:flex;align-items:center;gap:24px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px;">Writing</a>
+          <a href="#" style="color:var(--muted);">Notes</a>
+          <a href="#" style="color:var(--muted);">Homelab</a>
+          <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle theme" title="{{ themeTitle }}" style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--border);border-radius:4px;background:var(--surface);color:var(--muted);font-size:12px;cursor:pointer;font-family:inherit;transition:background .15s, border-color .15s;" style-hover="border-color:var(--accent);color:var(--accent);">{{ themeGlyph }}</button>
+        </nav>
+      </header>
+      <div style="padding:32px;display:flex;flex-direction:column;gap:18px;">
+        <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:16.5px;line-height:1.7;color:var(--ink);transition:color .15s;">Theme choice persists in <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:14px;background:var(--surface2);padding:1px 5px;border-radius:3px;">localStorage</span>; first visit follows <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:14px;background:var(--surface2);padding:1px 5px;border-radius:3px;">prefers-color-scheme</span>. Code blocks stay dark in both modes.</p>
+        <div style="border:1px solid #232a34;border-radius:5px;background:#0c0f14;overflow:hidden;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid #232a34;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6b7684;">
+            <span>bash</span>
+            <button type="button" onClick="{{ copyCode }}" style="padding:3px 9px;border:1px solid {{ copyBorder }};border-radius:3px;background:transparent;color:{{ copyColor }};font-family:inherit;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:color .15s, border-color .15s;" style-hover="border-color:#9aa5b1;color:#e8edf3;">{{ copyLabel }}</button>
+          </div>
+          <pre ref="{{ codeRef }}" style="margin:0;padding:18px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13.5px;line-height:1.8;color:#e8edf3;overflow:auto;">cloudflared tunnel login
+cloudflared tunnel create homelab
+cloudflared tunnel route dns homelab grafana.matacic.net</pre>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;">
+          <span style="white-space:nowrap;padding:4px 10px;border:1px solid var(--border);border-radius:3px;background:var(--soft);color:var(--accent);font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">cloudflare</span>
+          <span style="white-space:nowrap;padding:4px 10px;border:1px solid var(--border);border-radius:3px;background:var(--surface);color:var(--muted);font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;">self-hosting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 6 — DARK ============ -->
+  <sc-if value="{{ showDarkPreview }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">06 · Dark mode — isti tokeni, druga vrijednost</div>
+    <div data-screen-label="06 Dark" style="width:1180px;background:#0c0f14;border:1px solid #232a34;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(16,21,28,.2);">
+
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 56px;border-bottom:1px solid #232a34;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:16px;font-weight:500;color:#e8edf3;">
+          <img src="https://www.mata.com.hr/wp-content/uploads/2023/12/cropped-server-icon-32x32.png" alt="" width="20" height="20" style="width:20px;height:20px;display:block;filter:brightness(1.35) contrast(.95);">
+          <span>matacic<span style="color:#f59e0b;">.net</span></span>
+        </div>
+        <nav style="display:flex;align-items:center;gap:28px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;">
+          <a href="#" style="color:#f59e0b;border-bottom:1px solid #f59e0b;padding-bottom:2px;">Writing</a>
+          <a href="#" style="color:#9aa5b1;">Notes</a>
+          <a href="#" style="color:#9aa5b1;">Homelab</a>
+          <a href="#" style="color:#9aa5b1;">About / CV</a>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #232a34;border-radius:4px;background:#12161d;color:#9aa5b1;font-size:12px;">◐</span>
+        </nav>
+      </header>
+
+      <div style="padding:56px;display:flex;flex-direction:column;gap:52px;">
+        <div style="max-width:720px;display:flex;flex-direction:column;gap:16px;">
+          <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#f59e0b;">Systems &amp; Infrastructure</div>
+          <h1 style="margin:0;font-size:44px;line-height:1.1;font-weight:600;letter-spacing:-0.03em;color:#e8edf3;text-wrap:balance;">Ivan Matačić</h1>
+          <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:18px;line-height:1.7;color:#9aa5b1;max-width:660px;text-wrap:pretty;">Systems administrator working with virtualization, storage, backup and networking. I design, run and troubleshoot the infrastructure behind production — and write down the fixes, failures and homelab experiments so I (and you) don't have to solve them twice.</p>
+          <div style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#6b7684;padding-top:6px;">
+            <span>VMware · NetApp · Veeam</span><span>·</span><span>Zagreb, HR</span><span>·</span><span style="font-variant-numeric:tabular-nums;">since 2019</span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="padding:6px 12px;border:1px solid #323b48;border-radius:3px;background:#2a1f0d;color:#f59e0b;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">Homelab 7</span>
+          <span style="padding:6px 12px;border:1px solid #232a34;border-radius:3px;background:#12161d;color:#e8edf3;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">Veeam 5</span>
+          <span style="padding:6px 12px;border:1px solid #232a34;border-radius:3px;background:#12161d;color:#e8edf3;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">vSphere 4</span>
+          <span style="padding:6px 12px;border:1px solid #232a34;border-radius:3px;background:#12161d;color:#e8edf3;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;">NetApp 3</span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6b7684;border-bottom:1px solid #323b48;padding-bottom:12px;">Latest</div>
+            <article style="display:flex;flex-direction:column;gap:7px;padding:18px 0;border-bottom:1px solid #232a34;">
+              <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#6b7684;">
+                <span style="color:#f59e0b;">Homelab</span><span>·</span><span style="font-variant-numeric:tabular-nums;">2026-08-14</span><span>·</span><span>9 min read</span>
+              </div>
+              <h2 style="margin:0;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em;color:#e8edf3;text-wrap:balance;">Exposing a homelab service with Cloudflare Tunnel — no open ports</h2>
+              <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:15px;line-height:1.65;color:#9aa5b1;">Port forwarding on a home router is a liability you maintain forever.</p>
+            </article>
+            <article style="display:flex;flex-direction:column;gap:7px;padding:18px 0;border-bottom:1px solid #232a34;">
+              <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#6b7684;">
+                <span style="color:#f59e0b;">Veeam</span><span>·</span><span style="font-variant-numeric:tabular-nums;">2026-07-29</span><span>·</span><span>7 min read</span>
+              </div>
+              <h2 style="margin:0;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em;color:#e8edf3;text-wrap:balance;">The Veeam restore that failed — and what it taught me about DR testing</h2>
+              <p style="margin:0;font-family:'IBM Plex Serif', Georgia, serif;font-size:15px;line-height:1.65;color:#9aa5b1;">The backup job was green for fourteen months. The restore was not.</p>
+            </article>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6b7684;border-bottom:1px solid #323b48;padding-bottom:12px;">Recent notes</div>
+            <a href="#" style="display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid #232a34;color:#e8edf3;">
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#6b7684;font-variant-numeric:tabular-nums;min-width:90px;">2026-08-22</span>
+              <span style="font-size:15px;">Filtering journalctl to a single unit and boot</span>
+            </a>
+            <a href="#" style="display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid #232a34;color:#e8edf3;">
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#6b7684;font-variant-numeric:tabular-nums;min-width:90px;">2026-08-11</span>
+              <span style="font-size:15px;">Mikrotik export hides default values</span>
+            </a>
+            <a href="#" style="display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid #232a34;color:#e8edf3;">
+              <span style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;color:#6b7684;font-variant-numeric:tabular-nums;min-width:90px;">2026-07-30</span>
+              <span style="font-size:15px;">Listing VM world IDs from the ESXi shell</span>
+            </a>
+            <div style="margin-top:22px;padding:18px 20px;border:1px solid #232a34;border-radius:5px;background:#12161d;display:flex;flex-direction:column;gap:8px;">
+              <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6b7684;">Token check</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span style="width:26px;height:26px;border-radius:3px;background:#0c0f14;border:1px solid #323b48;"></span>
+                <span style="width:26px;height:26px;border-radius:3px;background:#12161d;border:1px solid #323b48;"></span>
+                <span style="width:26px;height:26px;border-radius:3px;background:#171c24;border:1px solid #323b48;"></span>
+                <span style="width:26px;height:26px;border-radius:3px;background:#9aa5b1;"></span>
+                <span style="width:26px;height:26px;border-radius:3px;background:#e8edf3;"></span>
+                <span style="width:26px;height:26px;border-radius:3px;background:#f59e0b;"></span>
+                <span style="width:26px;height:26px;border-radius:3px;background:#22c55e;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 56px;border-top:1px solid #232a34;background:#171c24;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11.5px;color:#6b7684;">
+        <span>© 2026 Ivan Matačić</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#" style="color:#9aa5b1;">RSS</a>
+          <a href="#" style="color:#9aa5b1;">GitHub</a>
+          <a href="#" style="color:#9aa5b1;">LinkedIn</a>
+          <a href="#" style="color:#9aa5b1;">Credly</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============ TOKENS ============ -->
+  <sc-if value="{{ showTokens }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#59636f;">Reference · CSS custom properties</div>
+    <div style="width:1180px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div style="padding:28px 32px;border:1px solid #dfe5ec;border-radius:6px;background:#ffffff;display:flex;flex-direction:column;gap:14px;">
+        <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a94a1;">Light — :root</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;color:#10151c;">
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#fbfcfd;border:1px solid #dfe5ec;flex:none;"></span>--bg · #fbfcfd</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#ffffff;border:1px solid #dfe5ec;flex:none;"></span>--surface · #ffffff</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#f2f5f8;border:1px solid #dfe5ec;flex:none;"></span>--surface-2 · #f2f5f8</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#dfe5ec;flex:none;"></span>--border · #dfe5ec</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#c9d2dc;flex:none;"></span>--border-strong · #c9d2dc</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#10151c;flex:none;"></span>--ink · #10151c</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#59636f;flex:none;"></span>--muted · #59636f</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#8a94a1;flex:none;"></span>--faint · #8a94a1</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#b45309;flex:none;"></span>--accent · #b45309</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#fdf1e0;border:1px solid #dfe5ec;flex:none;"></span>--accent-soft · #fdf1e0</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#16a34a;flex:none;"></span>--led · #16a34a</span>
+        </div>
+      </div>
+      <div style="padding:28px 32px;border:1px solid #232a34;border-radius:6px;background:#12161d;display:flex;flex-direction:column;gap:14px;">
+        <div style="font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6b7684;">Dark — :root[data-theme="dark"]</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12.5px;color:#e8edf3;">
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#0c0f14;border:1px solid #323b48;flex:none;"></span>--bg · #0c0f14</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#12161d;border:1px solid #323b48;flex:none;"></span>--surface · #12161d</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#171c24;border:1px solid #323b48;flex:none;"></span>--surface-2 · #171c24</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#232a34;flex:none;"></span>--border · #232a34</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#323b48;flex:none;"></span>--border-strong · #323b48</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#e8edf3;flex:none;"></span>--ink · #e8edf3</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#9aa5b1;flex:none;"></span>--muted · #9aa5b1</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#6b7684;flex:none;"></span>--faint · #6b7684</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#f59e0b;flex:none;"></span>--accent · #f59e0b</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#2a1f0d;border:1px solid #323b48;flex:none;"></span>--accent-soft · #2a1f0d</span>
+          <span style="display:flex;align-items:center;gap:12px;"><span style="width:22px;height:22px;border-radius:3px;background:#22c55e;flex:none;"></span>--led · #22c55e</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;showTocRail&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Screens&quot;},
+  &quot;showDarkPreview&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Screens&quot;},
+  &quot;showTokens&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Screens&quot;}
+}">
+const THEMES = {
+  light: { bg: '#fbfcfd', surface: '#ffffff', surface2: '#f2f5f8', border: '#dfe5ec', ink: '#10151c', muted: '#59636f', faint: '#8a94a1', accent: '#b45309', soft: '#fdf1e0', iconFilter: 'none' },
+  dark: { bg: '#0c0f14', surface: '#12161d', surface2: '#171c24', border: '#232a34', ink: '#e8edf3', muted: '#9aa5b1', faint: '#6b7684', accent: '#f59e0b', soft: '#2a1f0d', iconFilter: 'brightness(1.35) contrast(.95)' }
+};
+class Component extends DCLogic {
+  state = { dark: false, copied: false };
+  codeRef = React.createRef();
+  toggleTheme = () => this.setState(s => ({ dark: !s.dark }));
+  copyCode = () => {
+    const text = this.codeRef.current ? this.codeRef.current.textContent : '';
+    const done = () => { this.setState({ copied: true }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ copied: false }), 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, done); else done();
+  };
+  renderVals() {
+    const dark = this.state.dark, copied = this.state.copied;
+    return {
+      t: dark ? THEMES.dark : THEMES.light,
+      toggleTheme: this.toggleTheme,
+      themeGlyph: dark ? '◑' : '◐',
+      themeTitle: dark ? 'Switch to light' : 'Switch to dark',
+      copyCode: this.copyCode,
+      codeRef: this.codeRef,
+      copyLabel: copied ? 'Copied ✓' : 'Copy',
+      copyColor: copied ? '#22c55e' : '#9aa5b1',
+      copyBorder: copied ? '#22c55e' : '#323b48',
+      showTocRail: this.props.showTocRail ?? true,
+      showDarkPreview: this.props.showDarkPreview ?? true,
+      showTokens: this.props.showTokens ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

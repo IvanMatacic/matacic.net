@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{- $n := len .RegularPages -}}
+<div class="wrap">
+  <div class="col col-760 list-page">
+    <header class="page-head">
+      <p class="eyebrow eyebrow-accent">{{ .Title }}</p>
+      <h1>All notes</h1>
+      <p class="lede">{{ .Description }} <span class="num">{{ $n }}</span> {{ if eq $n 1 }}note{{ else }}notes{{ end }}.</p>
+    </header>
+    <div class="year-list">
+      {{- range .RegularPages.GroupByDate "2006" }}
+      <h2 class="year num">{{ .Key }}</h2>
+      <ul class="year-posts note-list">
+        {{- range .Pages }}
+        {{ partial "note-row.html" . }}
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
+  </div>
+</div>
+{{ end }}

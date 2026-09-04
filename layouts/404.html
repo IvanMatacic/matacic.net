@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="col col-760 notfound">
+    <figure class="code" aria-hidden="true">
+      <figcaption class="code-head"><span class="code-lang">bash</span></figcaption>
+      <pre><code><span class="c-dim">$</span> curl -I matacic.net/this-page
+<span class="c-warn">HTTP/2 404</span>
+<span class="c-dim">$</span> ls /writing/this-page
+ls: cannot access '/writing/this-page': <span class="c-warn">No such file or directory</span></code></pre>
+    </figure>
+    <h1>Page not found</h1>
+    {{- if site.Params.features.search }}
+    <p class="lede">Moved, renamed or never existed. The search below covers every post and note.</p>
+    <form class="search-box" action="{{ "/search/" | relURL }}" method="get" role="search">
+      <span class="prompt" aria-hidden="true">/</span>
+      <input type="search" name="q" placeholder="search posts and notes…" aria-label="Search posts and notes">
+    </form>
+    {{- else }}
+    <p class="lede">Moved, renamed or never existed. The archives below cover every post and note.</p>
+    {{- end }}
+    <nav class="post-nav" aria-label="Where to next">
+      <a href="{{ "/" | relURL }}">← Home</a>
+      <a href="{{ "/writing/" | relURL }}">All writing</a>
+      <a href="{{ "/notes/" | relURL }}">All notes</a>
+    </nav>
+  </div>
+</div>
+{{ end }}

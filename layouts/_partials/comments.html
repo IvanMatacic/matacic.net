@@ -1,0 +1,13 @@
+{{- /* giscus, prepared but off: renders nothing until params.giscus.repo is set.
+       The client script is injected by assets/js/main.js so its data-theme matches the resolved site theme. */ -}}
+{{- with site.Params.giscus.repo }}
+<section class="comments" id="comments" data-pagefind-ignore
+  data-giscus-repo="{{ . }}"
+  data-giscus-repo-id="{{ site.Params.giscus.repoId }}"
+  data-giscus-category="{{ site.Params.giscus.category }}"
+  data-giscus-category-id="{{ site.Params.giscus.categoryId }}"
+  data-giscus-mapping="{{ site.Params.giscus.mapping | default "pathname" }}">
+  <h2 class="eyebrow">Comments</h2>
+  <noscript><p class="lede">Comments are powered by giscus and need JavaScript.</p></noscript>
+</section>
+{{- end }}

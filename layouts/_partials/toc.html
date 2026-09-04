@@ -1,0 +1,2 @@
+{{- /* Hugo's ToC without its fixed id, so it can be rendered twice (rail + collapsed) on one page. */ -}}
+{{- .TableOfContents | replaceRE ` id="TableOfContents"` "" | safeHTML -}}

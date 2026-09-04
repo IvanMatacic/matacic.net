@@ -1,0 +1,42 @@
+{{ define "main" }}
+{{- $showToc := and (eq .Section "writing") (or (gt .WordCount 600) .Params.toc) -}}
+<div class="wrap article-layout{{ if $showToc }} has-toc{{ end }}">
+  {{- if $showToc }}
+  <aside class="toc-rail" aria-label="Contents" data-pagefind-ignore>
+    <p class="toc-label">Contents</p>
+    {{ partial "toc.html" . }}
+  </aside>
+  {{- end }}
+  <article class="article">
+    <header class="article-head">
+      <p class="meta">
+        {{- with .GetTerms "topics" }}{{ range first 1 . }}<a class="meta-topic" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a><span aria-hidden="true">·</span>{{ end }}{{ end -}}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time><span aria-hidden="true">·</span><span>{{ .ReadingTime }} min read</span>
+      </p>
+      <h1 class="article-title">{{ .Title }}</h1>
+      {{- with .GetTerms "tags" }}
+      <ul class="tags" aria-label="Tags">
+        {{- range . }}
+        <li><a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle | lower }}</a></li>
+        {{- end }}
+      </ul>
+      {{- end }}
+      <hr class="rule">
+    </header>
+    {{- if $showToc }}
+    <details class="toc-collapsed" data-pagefind-ignore>
+      <summary>Contents</summary>
+      {{ partial "toc.html" . }}
+    </details>
+    {{- end }}
+    <div class="article-body prose" data-pagefind-body>
+      {{ .Content }}
+    </div>
+    <nav class="post-nav" aria-label="More writing">
+      {{- with .PrevInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ else }}<span></span>{{ end }}
+      {{- with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ else }}<a href="{{ "/writing/" | relURL }}">All writing →</a>{{ end }}
+    </nav>
+    {{ partial "comments.html" . }}
+  </article>
+</div>
+{{ end }}

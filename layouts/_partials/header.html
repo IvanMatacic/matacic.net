@@ -1,0 +1,38 @@
+{{- $writingCount := len (where site.RegularPages "Section" "writing") -}}
+{{- $notesCount := len (where site.RegularPages "Section" "notes") -}}
+{{- $items := slice
+  (dict "name" "Writing" "url" "/writing/" "section" "writing" "count" $writingCount)
+  (dict "name" "Notes" "url" "/notes/" "section" "notes" "count" $notesCount)
+  (dict "name" "Homelab" "url" "/homelab/" "section" "" "count" 0)
+  (dict "name" "About / CV" "url" "/about/" "section" "" "count" 0)
+-}}
+{{- $page := . -}}
+<header class="site-header" data-pagefind-ignore>
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="matacic.net — home">
+      <img class="brand-icon" src="{{ "icon-server.png" | relURL }}" alt="" width="20" height="20">
+      <span class="brand-name">matacic<span class="brand-tld">.net</span></span>
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul class="nav-list">
+        {{- range $items }}
+        {{- $active := false }}
+        {{- if .section }}{{ $active = eq $page.Section .section }}{{ else }}{{ $active = eq $page.RelPermalink (.url | relURL) }}{{ end }}
+        <li><a href="{{ .url | relURL }}"{{ if $active }} class="is-active" aria-current="true"{{ end }}>{{ .name }}{{ if gt .count 0 }} <span class="nav-count num">{{ .count }}</span>{{ end }}</a></li>
+        {{- end }}
+      </ul>
+      <div class="nav-social">
+        <a href="{{ "index.xml" | relURL }}">RSS</a>
+        <a href="{{ site.Params.github }}" rel="me">GitHub</a>
+        <a href="{{ site.Params.linkedin }}" rel="me">LinkedIn</a>
+        <a href="{{ site.Params.credly }}" rel="me">Credly</a>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"></button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>

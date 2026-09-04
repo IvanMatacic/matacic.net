@@ -1,0 +1,8 @@
+{{- /* Every fenced code block becomes a dark figure with a header bar: language label left,
+       copy button (injected by assets/js/main.js) right. Highlighting follows [markup.highlight]. */ -}}
+{{- $lang := .Type | default "code" -}}
+{{- $result := transform.HighlightCodeBlock . -}}
+<figure class="code">
+  <figcaption class="code-head"><span class="code-lang">{{ $lang }}</span></figcaption>
+  {{ $result.Wrapped }}
+</figure>

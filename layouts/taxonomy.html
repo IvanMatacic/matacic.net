@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="col col-760 list-page">
+    <header class="page-head">
+      <p class="eyebrow eyebrow-accent">Browse</p>
+      <h1>{{ .Title }}</h1>
+      <p class="lede">{{ len .Data.Terms }} {{ .Data.Plural }} across writing and notes. Pick one to see everything filed under it.</p>
+    </header>
+    <nav class="topics" aria-label="All {{ .Data.Plural }}">
+      {{- range .Data.Terms.ByCount }}
+      {{- with .Page }}
+      <a class="chip" href="{{ .RelPermalink }}">{{ if eq $.Data.Plural "tags" }}{{ .LinkTitle | lower }}{{ else }}{{ .LinkTitle }}{{ end }} <span class="chip-count num">{{ len .Pages }}</span></a>
+      {{- end }}
+      {{- end }}
+    </nav>
+  </div>
+</div>
+{{ end }}

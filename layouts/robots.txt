@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# AI crawlers are intentionally ALLOWED. This site exists for reach and
+# personal brand, not ad revenue — being surfaced by an AI assistant is
+# discovery, not loss. To opt out later, change Allow to Disallow below.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}

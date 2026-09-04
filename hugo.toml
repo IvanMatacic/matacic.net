@@ -1,0 +1,67 @@
+baseURL = "https://matacic.net/"
+locale = "en-US"
+title = "Ivan Matačić"
+enableRobotsTXT = true
+
+# --- Analytics: both OFF until an ID is set; production-only either way -------
+# Recommended: Cloudflare Web Analytics (cookieless, free, no consent banner).
+#   Put the beacon token in params.cloudflareAnalyticsToken below.
+# Optional: GA4. Uses cookies -> in the EU this implies a consent banner.
+[services.googleAnalytics]
+  ID = ""            # e.g. "G-XXXXXXXXXX"
+
+[taxonomies]
+  topic = "topics"
+  tag   = "tags"
+
+[permalinks]
+  writing = "/writing/:slug/"
+  notes   = "/notes/:slug/"
+
+[markup]
+  [markup.highlight]
+    style     = "github-dark"
+    noClasses = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel   = 3
+    ordered    = false
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "LLMS"]
+
+[outputFormats.LLMS]
+  mediaType      = "text/plain"
+  baseName       = "llms"
+  isPlainText    = true
+  notAlternative = true
+
+[params]
+  author      = "Ivan Matačić"
+  role        = "Systems & Infrastructure"
+  bio         = "Systems administrator working with virtualization, storage, backup and networking. I design, run and troubleshoot the infrastructure behind production — and write down the fixes, failures and homelab experiments so I (and you) don't have to solve them twice."
+  location    = "Zagreb, HR"
+  since       = "2019"          # CONFIRM
+  description = "Notes from the rack — a systems & infrastructure blog by Ivan Matačić."
+  ogImage     = "og-default.png"
+
+  # Contact / social — CONFIRM ALL THREE
+  email    = "hello@matacic.net"
+  linkedin = "https://www.linkedin.com/in/ivan-matacic"
+  github   = "https://github.com/ivan-matacic"
+  credly   = "https://www.credly.com/users/ivan-matacic"
+
+  # Cloudflare Web Analytics beacon token (cookieless). Empty = no analytics.
+  cloudflareAnalyticsToken = ""
+
+  [params.features]
+    search = false     # flip to true after enabling the Pagefind steps in CI
+
+  [params.giscus]      # empty repo = comments render nothing
+    repo       = ""
+    repoId     = ""
+    category   = "Announcements"
+    categoryId = ""
+    mapping    = "pathname"

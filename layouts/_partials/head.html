@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $title := printf "%s · %s" .Title site.Title -}}
+{{- if .IsHome }}{{ $title = printf "%s — %s" site.Title site.Params.role }}
+{{- else if eq .Kind "term" }}{{ $title = printf "%s · %s · %s" (cond (eq .Data.Plural "tags") (lower .Title) .Title) (.Data.Plural | title) site.Title }}
+{{- end }}
+<title>{{ $title }}</title>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}document.documentElement.className+=' js'})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
+{{- with resources.Get "css/main.css" }}
+{{- $css := . | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+<link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
+{{- end }}
+{{ partial "seo.html" . }}
+{{ partial "analytics.html" . }}
