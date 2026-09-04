@@ -64,10 +64,12 @@ exists. Add one per new topic (see `content/topics/homelab/_index.md`).
 
 Edit `data/certifications.yaml`. Each item needs `name`, `year` and the Credly badge `id`
 (the UUID in the badge's public URL); the About page renders the group, the count chips and
-the "Verify ↗" link to `https://www.credly.com/badges/<id>/public_url`. To show a real badge
-image, drop the PNG in `static/badges/` and set `image: "badges/<file>.png"` on the item —
-see `static/badges/README.md`. The same file feeds the `Person` JSON-LD on `/about/`
-(`hasCredential`).
+the "Verify ↗" link to `https://www.credly.com/badges/<id>/public_url`. Then run
+`scripts/fetch-badges.ps1`: it downloads the badge artwork from the badge's public Credly page
+for every item that has no `image:` yet, saves a 132×132 PNG into `static/badges/` and prints
+the `image: "badges/<file>.png"` line to add to the item. Items without `image` fall back to the
+issuer's initials on a disc — see `static/badges/README.md`. The same YAML feeds the `Person`
+JSON-LD on `/about/` (`hasCredential`).
 
 ### Homelab and About
 

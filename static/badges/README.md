@@ -1,19 +1,21 @@
 # Badge images
 
-Drop the real badge PNG for a certification into this folder, then point the
-matching item in `data/certifications.yaml` at it:
+Badge artwork for the certifications listed in `data/certifications.yaml`. Each file is the
+official Credly badge image, downloaded from the badge's public Credly page and scaled to
+132×132 px (three times the 44 px slot on `/about/`) with a transparent background.
 
-```yaml
-- name: "VBR v11: Architecture & Design (VMCA 2022)"
-  year: 2021
-  id: "d848d336-3c4a-46e3-9566-e8d55921bcc6"
-  image: "badges/veeam-vmca.png"   # path relative to static/
-```
+## Adding one
 
-Guidelines:
+1. Add the certification to `data/certifications.yaml` with its `name`, `year` and Credly `id`.
+2. Run from the repo root:
 
-- Square PNG, 176×176 px or larger (Credly badges are usually 340×340). The
-  template renders it at 44×44 and sets `width`/`height` for layout stability.
-- Keep file names lowercase and hyphenated: `issuer-badge.png`.
-- Items without `image` fall back to the issuer's mono initials on a tinted disc,
-  so the section always renders completely.
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File scripts/fetch-badges.ps1
+   ```
+
+   It fetches artwork for every item that has no `image:` line and prints the line to add.
+3. Paste the printed `image: "badges/<file>.png"` under that item.
+
+You can also drop any square PNG here by hand and point `image:` at it. Items without `image`
+fall back to the issuer's mono initials on a tinted disc, so the section always renders
+completely.
