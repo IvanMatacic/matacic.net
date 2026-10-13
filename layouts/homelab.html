@@ -1,33 +1,13 @@
 {{ define "main" }}
 <div class="wrap">
   <div class="col col-860 homelab-stack">
-    <header class="page-head">
-      <p class="eyebrow eyebrow-accent">{{ .Title }}</p>
-      <h1>{{ .Params.heading | default .Title }}</h1>
-      <div class="lede">{{ .Content }}</div>
-    </header>
-
-    {{- with .Params.hardware }}
-    <div class="hw-wrap">
-      <table class="hw-table">
-        <caption class="sr-only">Current hardware</caption>
-        <colgroup><col><col><col><col></colgroup>
-        <thead>
-          <tr><th scope="col">Host</th><th scope="col">Role</th><th scope="col">Specs</th><th scope="col">Notes</th></tr>
-        </thead>
-        <tbody>
-          {{- range . }}
-          <tr>
-            <td class="hw-host">{{ .host }}</td>
-            <td>{{ .role }}</td>
-            <td>{{ .specs }}</td>
-            <td class="hw-notes">{{ .notes }}</td>
-          </tr>
-          {{- end }}
-        </tbody>
-      </table>
+    <div class="homelab-intro">
+      <header class="page-head">
+        <p class="eyebrow eyebrow-accent">{{ .Title }}</p>
+        <h1>{{ .Params.heading | default .Title }}</h1>
+      </header>
+      <div class="prose homelab-prose">{{ .Content }}</div>
     </div>
-    {{- end }}
 
     <div class="two-col">
       <section class="side-block" aria-labelledby="runs-heading">

@@ -1,0 +1,61 @@
+# 301 redirects from mata.com.hr to matacic.net
+#
+# Paste ABOVE the "# BEGIN WordPress" block in the .htaccess at the WordPress
+# root. Rules are ordered most specific first, so nothing shadows anything else.
+# Generated from the old sitemap; the mapping lives in redirects-from-mata.csv.
+
+# --- images (must come before the post rules) --------------------------------
+RedirectMatch 301 ^/wp-content/uploads/2024/01/cost-1\.png$ https://matacic.net/images/proper-storage-optimization/cost-1.png
+RedirectMatch 301 ^/wp-content/uploads/2018/08/win-acme-1\.png$ https://matacic.net/images/prtg-lets-encrypt-renewal/win-acme-1.png
+RedirectMatch 301 ^/wp-content/uploads/2018/08/win-acme-2-1\.png$ https://matacic.net/images/prtg-lets-encrypt-renewal/win-acme-2-1.png
+RedirectMatch 301 ^/wp-content/uploads/2018/08/win-acme-3-1\.png$ https://matacic.net/images/prtg-lets-encrypt-renewal/win-acme-3-1.png
+RedirectMatch 301 ^/wp-content/uploads/2017/11/trusted_location\.jpg$ https://matacic.net/images/office-trusted-locations-credential-prompt/trusted-location.jpg
+RedirectMatch 301 ^/wp-content/uploads/2017/10/iiserror\.png$ https://matacic.net/images/lets-encrypt-certificate-for-prtg/iiserror.png
+RedirectMatch 301 ^/wp-content/uploads/2017/10/stopprtg\.png$ https://matacic.net/images/lets-encrypt-certificate-for-prtg/stopprtg.png
+RedirectMatch 301 ^/wp-content/uploads/2017/10/prtghttps\.png$ https://matacic.net/images/lets-encrypt-certificate-for-prtg/prtghttps.png
+RedirectMatch 301 ^/wp-content/uploads/2017/10/letsencrypt1\.png$ https://matacic.net/images/lets-encrypt-certificate-for-prtg/letsencrypt1.png
+RedirectMatch 301 ^/wp-content/uploads/2017/10/addmimetype\.png$ https://matacic.net/images/lets-encrypt-certificate-for-prtg/addmimetype.png
+RedirectMatch 301 ^/wp-content/uploads/2017/10/prtgcertimporter1\.png$ https://matacic.net/images/lets-encrypt-certificate-for-prtg/prtgcertimporter1.png
+RedirectMatch 301 ^/wp-content/uploads/2017/10/prtgcertimporter2\.png$ https://matacic.net/images/lets-encrypt-certificate-for-prtg/prtgcertimporter2.png
+RedirectMatch 301 ^/wp-content/uploads/2017/10/prtgcertimporter3\.png$ https://matacic.net/images/lets-encrypt-certificate-for-prtg/prtgcertimporter3.png
+
+# --- attachment pages -> parent post -----------------------------------------
+RedirectMatch 301 ^/[^/]+/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/ https://matacic.net/writing/lets-encrypt-certificate-for-prtg/
+RedirectMatch 301 ^/[^/]+/how-proper-storage-optimization-settings-can-save-you-money/attachment/ https://matacic.net/writing/proper-storage-optimization/
+RedirectMatch 301 ^/[^/]+/how-to-renew-lets-encrypt-certificate-for-prtg/attachment/ https://matacic.net/notes/prtg-lets-encrypt-renewal/
+RedirectMatch 301 ^/[^/]+/prompt-for-credentials-when-accessing-office-documents/attachment/ https://matacic.net/notes/office-trusted-locations-credential-prompt/
+
+# --- posts -------------------------------------------------------------------
+# Matched by slug with any category prefix, because two of these posts were
+# filed under a different category earlier and both URLs are still linked.
+RedirectMatch 301 ^/[^/]+/lets-encrypt-certificate-for-prtg-on-windows-server/?$ https://matacic.net/writing/lets-encrypt-certificate-for-prtg/
+RedirectMatch 301 ^/[^/]+/how-proper-storage-optimization-settings-can-save-you-money/?$ https://matacic.net/writing/proper-storage-optimization/
+RedirectMatch 301 ^/[^/]+/how-to-renew-lets-encrypt-certificate-for-prtg/?$ https://matacic.net/notes/prtg-lets-encrypt-renewal/
+RedirectMatch 301 ^/[^/]+/how-to-view-system-uptime-on-ibm-storwize/?$ https://matacic.net/notes/storwize-uptime-from-support-package/
+RedirectMatch 301 ^/[^/]+/prompt-for-credentials-when-accessing-office-documents/?$ https://matacic.net/notes/office-trusted-locations-credential-prompt/
+RedirectMatch 301 ^/[^/]+/windows-wont-use-saved-password-for-network-location/?$ https://matacic.net/notes/windows-webdav-saved-password/
+
+# --- categories --------------------------------------------------------------
+RedirectMatch 301 ^/category/prtg/?$ https://matacic.net/topics/prtg/
+RedirectMatch 301 ^/category/veeam/?$ https://matacic.net/topics/veeam/
+RedirectMatch 301 ^/category/storage/?$ https://matacic.net/tags/storage/
+RedirectMatch 301 ^/category/windows-client/?$ https://matacic.net/tags/windows/
+RedirectMatch 301 ^/category/windows-server/?$ https://matacic.net/tags/windows/
+
+# --- tags --------------------------------------------------------------------
+# veeam is a topic on the new site, so it is redirected before the generic rule.
+RedirectMatch 301 ^/tag/veeam/?$ https://matacic.net/topics/veeam/
+RedirectMatch 301 ^/tag/([^/]+)/?$ https://matacic.net/tags/$1/
+
+# --- feeds, author, pages ----------------------------------------------------
+RedirectMatch 301 ^/comments/feed/?$ https://matacic.net/
+RedirectMatch 301 ^/feed/?$ https://matacic.net/index.xml
+RedirectMatch 301 ^/author/[^/]+/?$ https://matacic.net/about/
+RedirectMatch 301 ^/about/?$ https://matacic.net/about/
+RedirectMatch 301 ^/$ https://matacic.net/
+
+# --- everything else ---------------------------------------------------------
+# Catches search pages, pagination and anything not listed above. Enable it only
+# when you no longer need to sign in to the old WordPress: the exclusions below
+# keep wp-admin, wp-login and wp-content reachable, but nothing else.
+# RedirectMatch 301 ^/(?!wp-admin|wp-login|wp-content|wp-includes|wp-json)(.*)$ https://matacic.net/

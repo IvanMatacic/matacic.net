@@ -811,8 +811,11 @@ html:not(.js) .theme-toggle { display: none; }
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: start;   /* Experience is much taller than Focus; don't stretch Focus to match */
   gap: 32px;
 }
+/* About: Focus above Experience instead of side by side (Homelab keeps two columns) */
+.two-col.is-stacked { grid-template-columns: 1fr; }
 .card {
   display: flex;
   flex-direction: column;
@@ -832,9 +835,18 @@ html:not(.js) .theme-toggle { display: none; }
   font-size: 15px;
   line-height: 1.5;
 }
-.exp { gap: 10px; }
+.exp { gap: 14px; }
 .exp li { display: flex; flex-direction: column; gap: 2px; }
 .exp .meta { font-size: 11.5px; }
+.exp-detail {
+  margin-top: 3px;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+/* Contact line for the printed CV only; section 12 reveals it. */
+.print-contact { display: none; }
 
 .certs { display: flex; flex-direction: column; gap: 24px; }
 .certs-head {
@@ -915,14 +927,23 @@ html:not(.js) .theme-toggle { display: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;   /* three buttons: drop them to their own row before squeezing the copy */
   gap: 32px;
   padding: 28px 32px;
   border: 1px solid var(--border-strong);
   border-radius: 5px;
   background: var(--accent-soft);
 }
-.contact-text { display: flex; flex-direction: column; gap: 6px; }
+.contact-text { display: flex; flex-direction: column; gap: 6px; flex: 1 1 300px; }
 .contact-text p { font-family: var(--font-serif); font-size: 16px; color: var(--ink); }
+.contact-text .contact-email {
+  /* plain text, not a link: one click selects the whole address, drag-select works too */
+  font: 500 17px var(--font-mono);
+  user-select: all;
+  -webkit-user-select: all;
+  cursor: text;
+  overflow-wrap: anywhere;
+}
 .contact-actions { display: flex; align-items: center; gap: 12px; flex: none; flex-wrap: wrap; }
 .btn {
   display: inline-block;
@@ -937,6 +958,8 @@ html:not(.js) .theme-toggle { display: none; }
   transition: border-color var(--speed), background-color var(--speed), color var(--speed);
 }
 .btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.btn-icon { display: inline-flex; align-items: center; gap: 8px; }
+.btn-ico { width: 14px; height: 14px; flex: none; fill: currentColor; }
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
@@ -950,40 +973,33 @@ html:not(.js) .theme-toggle { display: none; }
 
 /* ---------- 11. Homelab ---------- */
 .homelab-stack { display: flex; flex-direction: column; gap: 44px; }
-.hw-wrap {
+.homelab-intro { display: flex; flex-direction: column; gap: 14px; }
+.homelab-prose > p:first-child { font-size: 17px; color: var(--muted); max-width: 720px; }
+/* The hardware table is a plain Markdown table; render-table.html supplies the
+   .table-wrap, and these rules turn it into the bordered hardware card. */
+.homelab-prose .table-wrap {
   border: 1px solid var(--border);
   border-radius: 5px;
   background: var(--surface);
   overflow-x: auto;
 }
-.hw-table {
-  width: 100%;
+.homelab-prose table {
   min-width: 640px;
-  border-collapse: collapse;
-  table-layout: fixed;
   font-size: 14px;
 }
-.hw-table th {
+.homelab-prose th {
   padding: 12px 20px;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface-2);
-  text-align: left;
-  font: 500 10.5px var(--font-mono);
+  font-size: 10.5px;
   letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--muted);
 }
-.hw-table td {
+.homelab-prose td {
   padding: 15px 20px;
-  border-bottom: 1px solid var(--border);
   vertical-align: baseline;
   color: var(--muted);
 }
-.hw-table tr:last-child td { border-bottom: 0; }
-.hw-table .hw-host { font: 400 13px var(--font-mono); color: var(--ink); }
-.hw-table .hw-notes { color: var(--faint); }
-.hw-table col:nth-child(1), .hw-table col:nth-child(2) { width: 150px; }
-.hw-table col:nth-child(4) { width: 220px; }
+.homelab-prose tbody tr:last-child td { border-bottom: 0; }
+.homelab-prose tbody td:first-child { font: 400 13px var(--font-mono); color: var(--ink); white-space: nowrap; }
+.homelab-prose tbody td:last-child { color: var(--faint); }
 
 .runs-list {
   display: flex;
@@ -1132,4 +1148,87 @@ html:not(.js) .theme-toggle { display: none; }
   .cert { flex-wrap: wrap; }
   .cert-verify { width: 100%; padding-left: 60px; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
+/* ---------- 12. Print / PDF CV ----------
+   scripts/build-cv-pdf.ps1 prints /about/ through headless Edge into static/cv.pdf.
+   Tokens are pinned to the light palette here so the PDF never inherits a dark theme,
+   and every interactive affordance is dropped: paper has no nav, no toggle, no links. */
+@media print {
+  :root,
+  :root[data-theme="dark"],
+  :root:not([data-theme="light"]) {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #ffffff;
+    --border: #cbd3dc;
+    --border-strong: #9aa4b0;
+    --ink: #000000;
+    --muted: #2b3138;
+    --faint: #4a525b;
+    --accent: #000000;
+    --accent-soft: #ffffff;
+  }
+
+  @page { margin: 14mm 13mm; }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .skip-link,
+  .site-header,
+  .site-footer,
+  .theme-toggle,
+  .nav-toggle,
+  .contact,
+  .cert-verify { display: none !important; }
+
+  .print-contact {
+    display: block;
+    margin-top: 10px;
+    font: 400 10pt/1.5 var(--font-mono);
+    color: var(--muted);
+  }
+  /* real links, so the PDF is clickable; styled as plain text */
+  .print-contact a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: none; padding-inline: 0; }
+  .site-main { padding-block: 0; }
+  .about-stack { gap: 20px; }
+  .page-head h1 { font-size: 24pt; }
+
+  /* Cards lose their chrome and become plain blocks of type. */
+  .card {
+    padding: 0;
+    border: 0;
+    background: none;
+    break-inside: avoid;
+  }
+  .two-col { gap: 20px; }
+
+  .lede { font-size: 10.5pt; line-height: 1.55; }
+  .plain-list { font-size: 10pt; }
+  .exp { gap: 11px; }
+  .exp-detail { font-size: 9.5pt; }
+
+  .certs { gap: 12px; }
+  .certs-sub { font-size: 10pt; }
+  .cert-group,
+  .cert { break-inside: avoid; }
+  .cert-list { gap: 2px; }
+  .cert {
+    padding: 5px 0;
+    border: 0;
+    background: none;
+    gap: 12px;
+  }
+  .cert-disc,
+  .cert-badge { width: 32px; height: 32px; }
+
+  a { color: inherit; text-decoration: none; }
 }

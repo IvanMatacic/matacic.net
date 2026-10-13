@@ -30,8 +30,10 @@ Check ($robots -match 'User-agent: GPTBot' -and $robots -match 'User-agent: Clau
 "`n== llms.txt (first 20 lines)"
 Get-Content -Encoding UTF8 (Join-Path $pub 'llms.txt') -TotalCount 20
 $llms = Get-Content -Encoding UTF8 (Join-Path $pub 'llms.txt') -Raw
-Check (([regex]::Matches($llms, '\]\(https://matacic\.net/writing/')).Count -eq 2) 'llms.txt lists both articles with absolute URLs'
-Check (([regex]::Matches($llms, '\]\(https://matacic\.net/notes/')).Count -eq 3) 'llms.txt lists all three notes'
+$writing = (Get-ChildItem (Join-Path $pub 'writing') -Directory).Count
+$notes   = (Get-ChildItem (Join-Path $pub 'notes') -Directory).Count
+Check (([regex]::Matches($llms, '\]\(https://matacic\.net/writing/')).Count -eq $writing) "llms.txt lists all $writing articles with absolute URLs"
+Check (([regex]::Matches($llms, '\]\(https://matacic\.net/notes/')).Count -eq $notes) "llms.txt lists all $notes notes"
 Check (-not ($llms -match '/search/')) 'llms.txt does not list /search/'
 
 "`n== sitemap.xml"
@@ -54,7 +56,7 @@ Check ($null -ne $about) 'about JSON-LD parses'
 Check ($about.'@type' -eq 'Person') 'about JSON-LD is Person'
 Check ($about.hasCredential.Count -eq 13) "about has 13 hasCredential (got $($about.hasCredential.Count))"
 Check ($about.hasCredential[0].recognizedBy.'@type' -eq 'Organization') 'credential recognizedBy is Organization'
-$art = JsonLd 'writing/cloudflare-tunnel-homelab/index.html'
+$art = JsonLd 'writing/lets-encrypt-certificate-for-prtg/index.html'
 Check ($art.'@type' -eq 'BlogPosting') 'article JSON-LD is BlogPosting'
 Check ($art.image -match '^https://matacic\.net/.+\.png$') "article JSON-LD image is absolute ($($art.image))"
 $note = JsonLd 'notes/journalctl-single-unit-and-boot/index.html'
@@ -68,17 +70,21 @@ $credly = ([regex]::Matches($aboutHtml, 'href="?https://www\.credly\.com/badges/
 Check ($credly -eq 13) "13 Credly links on /about/ (got $credly)"
 $credlyLd = ([regex]::Matches($aboutHtml, '"url":"https://www\.credly\.com/badges/[0-9a-f-]{36}/public_url"')).Count
 Check ($credlyLd -eq 13) "13 Credly URLs in the Person JSON-LD (got $credlyLd)"
-$newtab = ([regex]::Matches($aboutHtml, 'target="?_blank"? rel="?noopener"?')).Count
-Check ($newtab -eq 13) "13 links open in a new tab with rel=noopener (got $newtab)"
+$newtab = ([regex]::Matches($aboutHtml, 'public_url"? target="?_blank"? rel="?noopener"?')).Count
+Check ($newtab -eq 13) "13 Credly links open in a new tab with rel=noopener (got $newtab)"
+Check ($aboutHtml -match 'href="?https://www\.linkedin\.com/[^ >]+ target="?_blank"? rel="?me noopener"?') 'LinkedIn button opens in a new tab'
+$pc = [regex]::Match($aboutHtml, 'class="?print-contact"?>(.*?)</p>').Groups[1].Value
+Check (([regex]::Matches($pc, '<a href')).Count -eq 4) 'CV contact line has 4 links (email, LinkedIn, GitHub, site) so the PDF is clickable'
+Check ($aboutHtml -match 'href="?https://github\.com/[^ >]+ target="?_blank"? rel="?me noopener"?') 'GitHub button opens in a new tab'
 
 "`n== table of contents"
-Check ((Html 'writing/cloudflare-tunnel-homelab/index.html') -match 'toc-rail') 'ToC present on the long article'
+Check ((Html 'writing/lets-encrypt-certificate-for-prtg/index.html') -match 'toc-rail') 'ToC present on the long article'
 Check (-not ((Html 'writing/the-veeam-restore-that-failed/index.html') -match 'toc-rail')) 'ToC absent on the short article'
 $notesToc = Get-ChildItem (Join-Path $pub 'notes') -Recurse -Filter index.html | Where-Object { (Get-Content -Encoding UTF8 $_.FullName -Raw) -match 'toc-rail|toc-collapsed' }
 Check ($notesToc.Count -eq 0) 'ToC never on notes'
 
 "`n== copy-button hooks"
-Check ((Html 'writing/cloudflare-tunnel-homelab/index.html') -match 'class="?code-head"?') 'code blocks have a header bar for the copy button'
+Check ((Html 'writing/the-veeam-restore-that-failed/index.html') -match 'class="?code-head"?') 'code blocks have a header bar for the copy button'
 
 "`n== nothing leaks in the default config"
 $leak = Get-ChildItem $pub -Recurse -File -Include *.html | Select-String -Pattern 'giscus\.app|cloudflareinsights|googletagmanager|gtag\(' -List
@@ -107,6 +113,20 @@ Check ((Html 'search/index.html') -match 'name="?robots"? content="?noindex') '/
 foreach ($f in 'index.xml', 'writing/index.xml', 'notes/index.xml') {
   $ok = $true; try { [xml](Get-Content -Encoding UTF8 (Join-Path $pub $f) -Raw) | Out-Null } catch { $ok = $false }
   Check $ok "$f is well-formed XML"
+}
+
+"`n== CV PDF"
+$cv = Join-Path $Root 'static\cv.pdf'
+Check (Test-Path $cv) 'static/cv.pdf exists'
+Check (Test-Path (Join-Path $pub 'cv.pdf')) 'cv.pdf is published to ./public'
+Check ((Html 'about/index.html') -match 'href="?/cv\.pdf"? download') '/about/ offers the CV download'
+if (Test-Path $cv) {
+  # mtime only, so a fresh clone cannot judge this - it is a local reminder, not a gate on CI.
+  $stamp = (Get-Item $cv).LastWriteTimeUtc
+  $newer = 'content\about.md', 'layouts\about.html', 'data\certifications.yaml' |
+    ForEach-Object { Join-Path $Root $_ } |
+    Where-Object { (Test-Path $_) -and (Get-Item $_).LastWriteTimeUtc -gt $stamp }
+  Check ($newer.Count -eq 0) "cv.pdf is newer than its sources$(if ($newer) { ' - stale, rerun scripts/build-cv-pdf.ps1 (changed: ' + (($newer | Split-Path -Leaf) -join ', ') + ')' })"
 }
 
 "`n== secrets"

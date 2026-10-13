@@ -48,9 +48,9 @@ enableRobotsTXT = true
   ogImage     = "og-default.png"
 
   # Contact / social — CONFIRM ALL THREE
-  email    = "hello@matacic.net"
-  linkedin = "https://www.linkedin.com/in/ivan-matacic"
-  github   = "https://github.com/ivan-matacic"
+  email    = "ivan@matacic.net"
+  linkedin = "https://www.linkedin.com/in/ivanmatacic"
+  github   = "https://github.com/IvanMatacic"
   credly   = "https://www.credly.com/users/ivan-matacic"
 
   # Cloudflare Web Analytics beacon token (cookieless). Empty = no analytics.

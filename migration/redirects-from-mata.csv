@@ -1,0 +1,68 @@
+type,old_url,new_url,note
+post,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,migrated
+post,https://www.mata.com.hr/veeam/how-proper-storage-optimization-settings-can-save-you-money/,https://matacic.net/writing/proper-storage-optimization/,migrated
+post,https://www.mata.com.hr/prtg/how-to-renew-lets-encrypt-certificate-for-prtg/,https://matacic.net/notes/prtg-lets-encrypt-renewal/,migrated
+post,https://www.mata.com.hr/storage/how-to-view-system-uptime-on-ibm-storwize/,https://matacic.net/notes/storwize-uptime-from-support-package/,migrated
+post,https://www.mata.com.hr/windows-client/prompt-for-credentials-when-accessing-office-documents/,https://matacic.net/notes/office-trusted-locations-credential-prompt/,migrated
+post,https://www.mata.com.hr/windows-client/windows-wont-use-saved-password-for-network-location/,https://matacic.net/notes/windows-webdav-saved-password/,migrated
+post-alias,https://www.mata.com.hr/windows-server/windows-wont-use-saved-password-for-network-location/,https://matacic.net/notes/windows-webdav-saved-password/,old category prefix still linked from another post
+page,https://www.mata.com.hr/,https://matacic.net/,
+page,https://www.mata.com.hr/about/,https://matacic.net/about/,old page has a title and no body text
+page,https://www.mata.com.hr/author/mata/,https://matacic.net/about/,author archive
+feed,https://www.mata.com.hr/feed/,https://matacic.net/index.xml,6 items in the old feed
+feed,https://www.mata.com.hr/comments/feed/,https://matacic.net/,no comments on the new site
+category,https://www.mata.com.hr/category/prtg/,https://matacic.net/topics/prtg/,
+category,https://www.mata.com.hr/category/veeam/,https://matacic.net/topics/veeam/,
+category,https://www.mata.com.hr/category/storage/,https://matacic.net/tags/storage/,no Storage topic on the new site
+category,https://www.mata.com.hr/category/windows-client/,https://matacic.net/tags/windows/,no Windows topic on the new site
+category,https://www.mata.com.hr/category/windows-server/,https://matacic.net/tags/windows/,no Windows topic on the new site
+tag,https://www.mata.com.hr/tag/backup/,https://matacic.net/tags/backup/,
+tag,https://www.mata.com.hr/tag/certificate/,https://matacic.net/tags/certificate/,
+tag,https://www.mata.com.hr/tag/credentials/,https://matacic.net/tags/credentials/,
+tag,https://www.mata.com.hr/tag/excel/,https://matacic.net/tags/excel/,
+tag,https://www.mata.com.hr/tag/ibm/,https://matacic.net/tags/ibm/,
+tag,https://www.mata.com.hr/tag/letsencrypt/,https://matacic.net/tags/letsencrypt/,
+tag,https://www.mata.com.hr/tag/network-drive/,https://matacic.net/tags/network-drive/,
+tag,https://www.mata.com.hr/tag/network-location/,https://matacic.net/tags/network-location/,
+tag,https://www.mata.com.hr/tag/object-storage/,https://matacic.net/tags/object-storage/,
+tag,https://www.mata.com.hr/tag/office/,https://matacic.net/tags/office/,
+tag,https://www.mata.com.hr/tag/prtg/,https://matacic.net/tags/prtg/,
+tag,https://www.mata.com.hr/tag/registry/,https://matacic.net/tags/registry/,
+tag,https://www.mata.com.hr/tag/s3/,https://matacic.net/tags/s3/,
+tag,https://www.mata.com.hr/tag/ssl/,https://matacic.net/tags/ssl/,
+tag,https://www.mata.com.hr/tag/storage/,https://matacic.net/tags/storage/,
+tag,https://www.mata.com.hr/tag/storwize/,https://matacic.net/tags/storwize/,
+tag,https://www.mata.com.hr/tag/uptime/,https://matacic.net/tags/uptime/,
+tag,https://www.mata.com.hr/tag/vmware/,https://matacic.net/tags/vmware/,
+tag,https://www.mata.com.hr/tag/webdav/,https://matacic.net/tags/webdav/,
+tag,https://www.mata.com.hr/tag/windows/,https://matacic.net/tags/windows/,
+tag,https://www.mata.com.hr/tag/word/,https://matacic.net/tags/word/,
+tag,https://www.mata.com.hr/tag/veeam/,https://matacic.net/topics/veeam/,veeam is a topic on the new site not a tag
+attachment,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/iiserror/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,attachment page to parent post
+attachment,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/stopprtg/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,attachment page to parent post
+attachment,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/prtghttps/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,attachment page to parent post
+attachment,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/letsencrypt1/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,attachment page to parent post
+attachment,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/addmimetype/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,attachment page to parent post
+attachment,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/prtgcertimporter1/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,attachment page to parent post
+attachment,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/prtgcertimporter2/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,attachment page to parent post
+attachment,https://www.mata.com.hr/windows-server/lets-encrypt-certificate-for-prtg-on-windows-server/attachment/prtgcertimporter3/,https://matacic.net/writing/lets-encrypt-certificate-for-prtg/,attachment page to parent post
+attachment,https://www.mata.com.hr/prtg/how-to-renew-lets-encrypt-certificate-for-prtg/attachment/win-acme-1/,https://matacic.net/notes/prtg-lets-encrypt-renewal/,attachment page to parent post
+attachment,https://www.mata.com.hr/prtg/how-to-renew-lets-encrypt-certificate-for-prtg/attachment/win-acme-2-2/,https://matacic.net/notes/prtg-lets-encrypt-renewal/,attachment page to parent post
+attachment,https://www.mata.com.hr/prtg/how-to-renew-lets-encrypt-certificate-for-prtg/attachment/win-acme-3-2/,https://matacic.net/notes/prtg-lets-encrypt-renewal/,attachment page to parent post
+attachment,https://www.mata.com.hr/windows-client/prompt-for-credentials-when-accessing-office-documents/attachment/trusted_location/,https://matacic.net/notes/office-trusted-locations-credential-prompt/,attachment page to parent post
+attachment,https://www.mata.com.hr/veeam/how-proper-storage-optimization-settings-can-save-you-money/attachment/cost/,https://matacic.net/writing/proper-storage-optimization/,attachment page to parent post
+attachment,https://www.mata.com.hr/veeam/how-proper-storage-optimization-settings-can-save-you-money/attachment/cost-2/,https://matacic.net/writing/proper-storage-optimization/,attachment page to parent post
+attachment,https://www.mata.com.hr/veeam/how-proper-storage-optimization-settings-can-save-you-money/attachment/veeam-storage-optimization-settings/,https://matacic.net/writing/proper-storage-optimization/,featured image never shown in the body - not migrated
+image,https://www.mata.com.hr/wp-content/uploads/2024/01/cost-1.png,https://matacic.net/images/proper-storage-optimization/cost-1.png,
+image,https://www.mata.com.hr/wp-content/uploads/2018/08/win-acme-1.png,https://matacic.net/images/prtg-lets-encrypt-renewal/win-acme-1.png,
+image,https://www.mata.com.hr/wp-content/uploads/2018/08/win-acme-2-1.png,https://matacic.net/images/prtg-lets-encrypt-renewal/win-acme-2-1.png,
+image,https://www.mata.com.hr/wp-content/uploads/2018/08/win-acme-3-1.png,https://matacic.net/images/prtg-lets-encrypt-renewal/win-acme-3-1.png,
+image,https://www.mata.com.hr/wp-content/uploads/2017/11/trusted_location.jpg,https://matacic.net/images/office-trusted-locations-credential-prompt/trusted-location.jpg,underscore renamed to hyphen
+image,https://www.mata.com.hr/wp-content/uploads/2017/10/iiserror.png,https://matacic.net/images/lets-encrypt-certificate-for-prtg/iiserror.png,
+image,https://www.mata.com.hr/wp-content/uploads/2017/10/stopprtg.png,https://matacic.net/images/lets-encrypt-certificate-for-prtg/stopprtg.png,
+image,https://www.mata.com.hr/wp-content/uploads/2017/10/prtghttps.png,https://matacic.net/images/lets-encrypt-certificate-for-prtg/prtghttps.png,
+image,https://www.mata.com.hr/wp-content/uploads/2017/10/letsencrypt1.png,https://matacic.net/images/lets-encrypt-certificate-for-prtg/letsencrypt1.png,
+image,https://www.mata.com.hr/wp-content/uploads/2017/10/addmimetype.png,https://matacic.net/images/lets-encrypt-certificate-for-prtg/addmimetype.png,
+image,https://www.mata.com.hr/wp-content/uploads/2017/10/prtgcertimporter1.png,https://matacic.net/images/lets-encrypt-certificate-for-prtg/prtgcertimporter1.png,
+image,https://www.mata.com.hr/wp-content/uploads/2017/10/prtgcertimporter2.png,https://matacic.net/images/lets-encrypt-certificate-for-prtg/prtgcertimporter2.png,
+image,https://www.mata.com.hr/wp-content/uploads/2017/10/prtgcertimporter3.png,https://matacic.net/images/lets-encrypt-certificate-for-prtg/prtgcertimporter3.png,
