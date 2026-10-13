@@ -54,7 +54,7 @@ enableRobotsTXT = true
   credly   = "https://www.credly.com/users/ivan-matacic"
 
   # Cloudflare Web Analytics beacon token (cookieless). Empty = no analytics.
-  cloudflareAnalyticsToken = ""
+  cloudflareAnalyticsToken = "b45a4e8c877e40f891b5b8bf151db7a4"
 
   [params.features]
     search = false     # flip to true after enabling the Pagefind steps in CI

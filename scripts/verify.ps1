@@ -87,8 +87,11 @@ Check ($notesToc.Count -eq 0) 'ToC never on notes'
 Check ((Html 'notes/journalctl-single-unit-and-boot/index.html') -match 'class="?code-head"?') 'code blocks have a header bar for the copy button'
 
 "`n== nothing leaks in the default config"
-$leak = Get-ChildItem $pub -Recurse -File -Include *.html | Select-String -Pattern 'giscus\.app|cloudflareinsights|googletagmanager|gtag\(' -List
-Check ($leak.Count -eq 0) "no analytics/comments markup emitted ($($leak.Count) files)"
+$leak = Get-ChildItem $pub -Recurse -File -Include *.html | Select-String -Pattern 'giscus\.app|googletagmanager|gtag\(' -List
+Check ($leak.Count -eq 0) "no GA/comments markup emitted ($($leak.Count) files)"
+# Cloudflare Web Analytics is on (cookieless): exactly one beacon on every page
+$noBeacon = Get-ChildItem $pub -Recurse -Filter index.html | Where-Object { ([regex]::Matches((Get-Content -Encoding UTF8 $_.FullName -Raw), 'static\.cloudflareinsights\.com/beacon\.min\.js')).Count -ne 1 }
+Check ($noBeacon.Count -eq 0) "Cloudflare Web Analytics beacon once on every page ($($noBeacon.Count) without)"
 
 "`n== per-page title / description / og:image"
 $pages = Get-ChildItem $pub -Recurse -Filter index.html
@@ -131,7 +134,7 @@ if (Test-Path $cv) {
 
 "`n== secrets"
 $cfg = Get-Content (Join-Path $Root 'hugo.toml') -Raw
-Check ($cfg -match 'cloudflareAnalyticsToken\s*=\s*""' -and $cfg -match 'repoId\s*=\s*""' -and $cfg -match 'ID\s*=\s*""') 'analytics + giscus IDs are empty in hugo.toml'
+Check ($cfg -match 'repoId\s*=\s*""' -and $cfg -match '\bID\s*=\s*""') 'GA + giscus IDs are empty in hugo.toml (Cloudflare beacon token is public by design)'
 
 ""
 if ($fail -gt 0) { "RESULT: $fail check(s) failed"; exit 1 } else { "RESULT: all checks passed"; exit 0 }
