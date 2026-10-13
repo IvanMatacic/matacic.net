@@ -79,12 +79,12 @@ Check ($aboutHtml -match 'href="?https://github\.com/[^ >]+ target="?_blank"? re
 
 "`n== table of contents"
 Check ((Html 'writing/lets-encrypt-certificate-for-prtg/index.html') -match 'toc-rail') 'ToC present on the long article'
-Check (-not ((Html 'writing/the-veeam-restore-that-failed/index.html') -match 'toc-rail')) 'ToC absent on the short article'
+Check (-not ((Html 'writing/proper-storage-optimization/index.html') -match 'toc-rail')) 'ToC absent on the short article'
 $notesToc = Get-ChildItem (Join-Path $pub 'notes') -Recurse -Filter index.html | Where-Object { (Get-Content -Encoding UTF8 $_.FullName -Raw) -match 'toc-rail|toc-collapsed' }
 Check ($notesToc.Count -eq 0) 'ToC never on notes'
 
 "`n== copy-button hooks"
-Check ((Html 'writing/the-veeam-restore-that-failed/index.html') -match 'class="?code-head"?') 'code blocks have a header bar for the copy button'
+Check ((Html 'notes/journalctl-single-unit-and-boot/index.html') -match 'class="?code-head"?') 'code blocks have a header bar for the copy button'
 
 "`n== nothing leaks in the default config"
 $leak = Get-ChildItem $pub -Recurse -File -Include *.html | Select-String -Pattern 'giscus\.app|cloudflareinsights|googletagmanager|gtag\(' -List
