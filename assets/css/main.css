@@ -474,6 +474,7 @@ html:not(.js) .theme-toggle { display: none; }
   font-size: 38px;
   line-height: 1.15;
   letter-spacing: -.025em;
+  text-wrap: wrap;
 }
 .tags {
   display: flex;
@@ -721,6 +722,7 @@ html:not(.js) .theme-toggle { display: none; }
   font-size: 27px;
   line-height: 1.25;
   letter-spacing: -.015em;
+  text-wrap: wrap;
 }
 .note .prose { font-size: 17px; }
 .tags-foot {

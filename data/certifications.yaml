@@ -40,6 +40,22 @@ groups:
         year: 2025
         id: "432c078e-ee4b-40c2-833b-8491e60bcab5"
         image: "badges/nse-3-certified-in-cybersecurity.png"
+      - name: "Introduction to the Next Generation Firewall 1.0"
+        year: 2026
+        id: "487d7402-27b7-4e1a-a7a6-e58a7ca058ff"
+        image: "badges/introduction-to-the-next-generation-firewall-1-0.png"
+      - name: "Cybersecurity and Cloud Fundamentals 1.0"
+        year: 2026
+        id: "04fcd1f5-18e5-4fab-b607-cc487e326e09"
+        image: "badges/cybersecurity-and-cloud-fundamentals-1-0.png"
+      - name: "NSE 2 Certified in Cybersecurity"
+        year: 2026
+        id: "76325c0e-6331-4fac-94d0-5dd62974e0ba"
+        image: "badges/nse-2-certified-in-cybersecurity.png"
+      - name: "NSE 1 Certified in Cybersecurity"
+        year: 2026
+        id: "045a640d-656b-4b8b-93d7-11ffa4cba2a8"
+        image: "badges/nse-1-certified-in-cybersecurity.png"
   - issuer: "VMware · Broadcom"
     color: "#78be20"
     mono: "vS"

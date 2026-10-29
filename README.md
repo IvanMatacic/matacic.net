@@ -26,7 +26,7 @@ Analytics, comments and search all stay off in `hugo server` regardless of confi
 analytics is gated on `hugo.IsProduction`, the other two on their config values.
 
 `scripts/verify.ps1` runs the acceptance checks against `./public` after a production build
-(robots/sitemap/llms.txt contents, JSON-LD shape, 13 Credly links, ToC rules, bundle size,
+(robots/sitemap/llms.txt contents, JSON-LD shape, 17 Credly links, ToC rules, bundle size,
 unique titles, no analytics/comments leakage, RSS well-formedness). Note that `hugo server`
 renders into `./public` as well, so stop it and rebuild before running the checks.
 

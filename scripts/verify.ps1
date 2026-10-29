@@ -54,7 +54,7 @@ Check ($homeHtml -match 'integrity="?sha') 'CSS/JS linked with SRI integrity'
 $about = JsonLd 'about/index.html'
 Check ($null -ne $about) 'about JSON-LD parses'
 Check ($about.'@type' -eq 'Person') 'about JSON-LD is Person'
-Check ($about.hasCredential.Count -eq 13) "about has 13 hasCredential (got $($about.hasCredential.Count))"
+Check ($about.hasCredential.Count -eq 17) "about has 17 hasCredential (got $($about.hasCredential.Count))"
 Check ($about.hasCredential[0].recognizedBy.'@type' -eq 'Organization') 'credential recognizedBy is Organization'
 $art = JsonLd 'writing/lets-encrypt-certificate-for-prtg/index.html'
 Check ($art.'@type' -eq 'BlogPosting') 'article JSON-LD is BlogPosting'
@@ -67,11 +67,11 @@ Check ($hm.'@type' -eq 'WebSite' -and $hm.author.'@type' -eq 'Person') 'home JSO
 "`n== certifications"
 $aboutHtml = Html 'about/index.html'
 $credly = ([regex]::Matches($aboutHtml, 'href="?https://www\.credly\.com/badges/[0-9a-f-]{36}/public_url"?')).Count
-Check ($credly -eq 13) "13 Credly links on /about/ (got $credly)"
+Check ($credly -eq 17) "17 Credly links on /about/ (got $credly)"
 $credlyLd = ([regex]::Matches($aboutHtml, '"url":"https://www\.credly\.com/badges/[0-9a-f-]{36}/public_url"')).Count
-Check ($credlyLd -eq 13) "13 Credly URLs in the Person JSON-LD (got $credlyLd)"
+Check ($credlyLd -eq 17) "17 Credly URLs in the Person JSON-LD (got $credlyLd)"
 $newtab = ([regex]::Matches($aboutHtml, 'public_url"? target="?_blank"? rel="?noopener"?')).Count
-Check ($newtab -eq 13) "13 Credly links open in a new tab with rel=noopener (got $newtab)"
+Check ($newtab -eq 17) "17 Credly links open in a new tab with rel=noopener (got $newtab)"
 Check ($aboutHtml -match 'href="?https://www\.linkedin\.com/[^ >]+ target="?_blank"? rel="?me noopener"?') 'LinkedIn button opens in a new tab'
 $pc = [regex]::Match($aboutHtml, 'class="?print-contact"?>(.*?)</p>').Groups[1].Value
 Check (([regex]::Matches($pc, '<a href')).Count -eq 4) 'CV contact line has 4 links (email, LinkedIn, GitHub, site) so the PDF is clickable'

@@ -1,6 +1,6 @@
 ---
 title: "About / CV"
-description: "Ivan Matačić — systems administrator in Zagreb: vSphere, IBM, NetApp, Veeam and networking. Experience and 13 verified certifications."
+description: "Ivan Matačić — systems administrator in Zagreb: vSphere, IBM, NetApp, Veeam and networking. Experience and 17 verified certifications."
 layout: "about"
 focus:
   - "Virtualization — VMware vSphere, Proxmox Virtual Environment"
